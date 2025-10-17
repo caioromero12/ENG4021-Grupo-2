@@ -1,0 +1,135 @@
+/* === Estilo Geral === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f1eb;
+  color: #5a3a2b;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #6b4e3d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* === Container de Login === */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 70px);
+  padding: 40px;
+}
+
+/* === Caixa de Login === */
+.login-box {
+  background-color: #fff8f2;
+  border-radius: 15px;
+  padding: 40px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h1 {
+  font-size: 1.8rem;
+  color: #5a3a2b;
+}
+
+.login-box p {
+  color: #7a5e4c;
+  margin-bottom: 20px;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.login-box input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #d8c5b3;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-box button {
+  background-color: #6b4e3d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #5a3a2b;
+}
+
+.register {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register a {
+  color: #6b4e3d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}
+
+/* === Imagem === */
+.login-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.login-image img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image {
+    margin-top: 30px;
+  }
+}
