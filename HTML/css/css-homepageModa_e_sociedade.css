@@ -145,9 +145,22 @@ footer {
   font-family: 'Playfair Display', serif;
 }
 
+/* 🔧 Ícones sociais lado a lado */
+.social {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* espaço entre os ícones */
+  margin-top: 1rem;
+}
+
 .social a img {
-  width: 20px;
-  margin-right: 0.8rem;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social a img:hover {
+  transform: scale(1.1);
 }
 
 .footer-links {
@@ -190,3 +203,11 @@ footer {
   }
 }
 
+main img {
+  width: 70%;              /* Reduz o tamanho da imagem */
+  max-width: 600px;        /* Limita o tamanho máximo em telas grandes */
+  display: block;          /* Permite centralizar */
+  margin: 1.5rem auto;     /* Centraliza e dá espaçamento vertical */
+  border-radius: 8px;      /* Mantém cantos levemente arredondados */
+  object-fit: contain;     /* Garante que a imagem não deforme */
+}
