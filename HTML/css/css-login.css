@@ -1,4 +1,4 @@
-/* === Estilo Geral === */
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -6,7 +6,7 @@ body {
   color: #5a3a2b;
 }
 
-/* === Navbar === */
+
 .navbar {
   background-color: #6b4e3d;
   color: white;
@@ -32,7 +32,6 @@ body {
   text-decoration: underline;
 }
 
-/* === Container de Login === */
 .login-container {
   display: flex;
   align-items: center;
@@ -41,7 +40,6 @@ body {
   padding: 40px;
 }
 
-/* === Caixa de Login === */
 .login-box {
   background-color: #fff8f2;
   border-radius: 15px;
@@ -109,7 +107,6 @@ body {
   text-decoration: underline;
 }
 
-/* === Imagem === */
 .login-image {
   flex: 1;
   display: flex;
