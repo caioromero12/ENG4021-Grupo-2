@@ -35,45 +35,45 @@ Carlos Eduardo Fragozo
 
 ## 🚀 Nossos Serviços
 
-1. Consultoria de Estilo Personalizada
-Análise do seu perfil, biotipo e lifestyle para criar um estilo único
+ 1. Consultoria de Estilo Personalizada
+ Análise do seu perfil, biotipo e lifestyle para criar um estilo único
 
-2. Análise de Guarda-roupa
-Otimização das peças que você já possui + identificação de lacunas
+ 2. Análise de Guarda-roupa
+ Otimização das peças que você já possui + identificação de lacunas
 
-3. Personal Shopper Virtual
-Recomendações de compras alinhadas ao seu orçamento e preferências
+ 3. Personal Shopper Virtual
+ Recomendações de compras alinhadas ao seu orçamento e preferências
 
-4. Assinatura ClosetLab
-Acompanhamento contínuo e atualizações de estilo sazonais
+ 4. Assinatura ClosetLab
+ Acompanhamento contínuo e atualizações de estilo sazonais
 
 ## Como utilizar nosso site
 
-1.Abra a Homepage principal
-foto
+ 1.Abra a Homepage principal
+ foto
 
-2.Para abrir a seção Quem Somos
-foto
+ 2.Para abrir a seção Quem Somos
+ foto
 
-3.Para abrir seção Nossos Produtos
-foto
+ 3.Para abrir seção Nossos Produtos
+ foto
 
-4.Para abrir seção Moda e Sociedade
-foto
+ 4.Para abrir seção Moda e Sociedade
+ foto
 
-5.Para abrir seção Consultoria
-foto
+ 5.Para abrir seção Consultoria
+ foto
 
-6.Para fazer login
-foto
+ 6.Para fazer login
+ foto
 
-7.Para abrir a seção de comentarios
-foto
+ 7.Para abrir a seção de comentarios
+ foto
 
-8.Para acessar nossas redes
-foto
+ 8.Para acessar nossas redes
+ foto
 
-## 🌟 Nossa Filosofia
+ ## 🌟 Nossa Filosofia
 
 > “Mais do que um site de moda, um espaço para que cada pessoa reencontre sua essência e eleve sua autoestima”
 
