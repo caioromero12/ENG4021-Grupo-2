@@ -49,28 +49,28 @@ Carlos Eduardo Fragozo
 
 ## Como utilizar nosso site
 
- 1.Abra a Homepage principal
+ 1. Abra a Homepage principal
  foto
 
- 2.Para abrir a seção Quem Somos
+ 2. Para abrir a seção Quem Somos
  foto
 
- 3.Para abrir seção Nossos Produtos
+ 3. Para abrir seção Nossos Produtos
  foto
 
- 4.Para abrir seção Moda e Sociedade
+ 4. Para abrir seção Moda e Sociedade
  foto
 
- 5.Para abrir seção Consultoria
+ 5. Para abrir seção Consultoria
  foto
 
- 6.Para fazer login
+ 6. Para fazer login
  foto
 
- 7.Para abrir a seção de comentarios
+ 7. Para abrir a seção de comentarios
  foto
 
- 8.Para acessar nossas redes
+ 8. Para acessar nossas redes
  foto
 
  ## 🌟 Nossa Filosofia
