@@ -54,26 +54,31 @@ Carlos Eduardo Fragozo
 
  3. Para abrir a seção Quem Somos
  ![Para abrir secao quem somos](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20secao%20quem%20somos.jpeg?raw=true)
+ A seção Quem Somos
  ![secao quem somos](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/quem%20somos.jpeg?raw=true)
 
- 4. Para abrir seção Nossos Produtos
+ 5. Para abrir seção Nossos Produtos
  ![Para abrir secao Nossos Produtos](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20nossos%20produtos.jpeg?raw=true)
  
- 5. Para abrir seção Moda e Sociedade
+ 6. Para abrir seção Moda e Sociedade
  ![Para abrir secao moda e sociedade](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20moda%20e%20sociedade.jpeg?raw=true)
+ Homepage da seção Moda e Sociedade
  ![Homepage Moda e sociedade](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/HP%20moda%20e%20sociedade.jpeg?raw=true)
+ Para abrir a seção Principais estilos
  ![Para abrir Principais estilos](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20estilos.jpeg?raw=true)
+ A seção Principais estilos
+ ![secao principais estilos](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/estilos.jpeg?raw=true)
 
- 7. Para abrir seção Consultoria
+ 8. Para abrir seção Consultoria
  ![Para abrir secao consultoria](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20consultoria.jpeg?raw=true)
 
- 8. Para fazer login
+ 9. Para fazer login
  ![Para fazer login](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20login.jpeg?raw=true)
 
- 9. Para abrir a seção de comentarios
+ 10. Para abrir a seção de comentarios
  ![Para abrir secao comentarios](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20comentarios%20.jpeg?raw=true)
 
- 10. Para acessar nossas redes
+ 11. Para acessar nossas redes
  ![Para acessar as nossas redes sociais](https://github.com/sofiarafful9-boop/Time2_sofia/blob/main/para%20abrir%20redes.jpeg?raw=true)
 
  ## 🌟 Nossa Filosofia
