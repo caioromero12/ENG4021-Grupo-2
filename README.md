@@ -1,22 +1,22 @@
 # ENG4021-Grupo-2
 ClosetLab - Consultoria de Estilo Personalizada
 
-📋 Descrição do Tema
+##📋 Descrição do Tema
 
 O  ClosetLab  é uma plataforma inovadora de consultoria de estilo que utiliza tecnologia para democratizar o acesso à moda personalizada. Nosso objetivo é transformar a relação das pessoas com o vestir, tornando-a uma jornada de autodescoberta e empoderamento.
 
-🎯 Missão
+##🎯 Missão
 Democratizar a confiança e o bem-estar através da moda, oferecendo consultoria de estilo acessível e personalizada que entende que:
 - Conforto e elegância caminham juntos
 - Qualidade importa mais que logos  
 - A melhor tendência é a que reflete sua personalidade única
 
-💡 Diferenciais
+##💡 Diferenciais
 - Metodologia Personalizada: Análise pessoal detalhada baseada em questionários e preferências individuais 
 - Inclusividade: Soluções para todos os corpos, idades e orçamentos
 - Sustentabilidade: Incentivo ao consumo consciente e aproveitamento do guarda-roupa existente
 
-👥 Componentes do Grupo
+##👥 Componentes do Grupo
 
 Sofia Rafful
 - Idade: 18 anos
@@ -33,7 +33,7 @@ Carlos Eduardo Fragozo
 - Cidade: Rio de Janeiro
 - Formação: Engenharia de Produção
 
-🚀 Nossos Serviços
+##🚀 Nossos Serviços
 
 1. Consultoria de Estilo Personalizada
 Análise do seu perfil, biotipo e lifestyle para criar um estilo único
@@ -47,7 +47,33 @@ Recomendações de compras alinhadas ao seu orçamento e preferências
 4. Assinatura ClosetLab
 Acompanhamento contínuo e atualizações de estilo sazonais
 
-🌟 Nossa Filosofia
+##Como utilizar nosso site
+
+1.Abra a Homepage principal
+foto
+
+2.Para abrir a seção Quem Somos
+foto
+
+3.Para abrir seção Nossos Produtos
+foto
+
+4.Para abrir seção Moda e Sociedade
+foto
+
+5.Para abrir seção Consultoria
+foto
+
+6.Para fazer login
+foto
+
+7.Para abrir a seção de comentarios
+foto
+
+8.Para acessar nossas redes
+foto
+
+##🌟 Nossa Filosofia
 
 > “Mais do que um site de moda, um espaço para que cada pessoa reencontre sua essência e eleve sua autoestima”
 
