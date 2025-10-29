@@ -1,0 +1,221 @@
+
+:root {
+    --bege-claro: #fdf8f3;
+    --marrom: #7a5b47;
+    --caramelo: #b37a4c;
+    --preto: #111;
+    --branco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bege-claro);
+    color: var(--marrom);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--marrom);
+    padding: 1rem 5%;
+    color: var(--branco);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.btn-login {
+    background: var(--branco);
+    color: var(--marrom);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.nav-links a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 5%;
+}
+
+.cabecalho h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cabecalho p {
+    margin-bottom: 1.5rem;
+}
+
+.cabecalho img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+footer {
+    background: var(--bege-claro);
+    border-top: 1px solid #ddd;
+    padding: 2rem 5%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.social a img {
+    width: 20px;
+    margin-right: 0.8rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.8rem;
+}
+
+#footer-final {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .grid-consultoria {
+        flex-direction: column;
+    }
+
+    .grid-consultoria img {
+        width: 100%;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .cabecalho {
+        text-align: left;
+    }
+}
+.container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: var(--marrom);
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+.fundadores h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--marrom);
+    text-align: center;
+}
+.fundadores-container img#fotocaio,
+.fundadores-container img#fotocadu,
+.fundadores-container img#fotosofia {
+    width: 200px;
+}
+.fundadores-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+.fundador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+}
+#fotocaio, #fotocadu, #fotosofia {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 70%;
+    margin-bottom: 1rem;
+}
+.fundador p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--marrom);
+}
+@media (max-width: 768px) {
+    .fundadores-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .fundador {
+        min-width: 100%;
+    }
+    
+    #fotocaio, #fotocadu, #fotosofia {
+        width: 150px;
+        height: 150px;
+    }
+}
+.container {
+    text-align: center;
+}
+#fotodoarmario {
+    text-align: right;
+    width: 350px;
+    margin: 6rem;
+}
+#fotoderoupas {
+    text-align: left;
+    width: 350px;
+    margin: 3rem;
+}
