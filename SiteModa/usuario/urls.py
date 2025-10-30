@@ -13,4 +13,7 @@ urlpatterns = [
     path('login/', views.login_custom, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cadastro/', views.cadastro, name='cadastro'),
+    
+    # NOVA ROTA: Página de consulta
+    path('consulta/', views.ConsultaUsuariosView.as_view(), name='consulta_usuarios'),
 ]

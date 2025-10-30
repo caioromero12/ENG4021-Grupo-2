@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.generic.base import View
+from django.utils.decorators import method_decorator
 from .models import Perfil
 
 def login_custom(request):
@@ -23,8 +25,8 @@ def cadastro(request):
         nome = request.POST['nome']
         email = request.POST['email']
         senha = request.POST['senha']
-        estilo_favorito = request.POST.get('estilo_favorito', '')  # NOVO
-        tamanho_roupa = request.POST.get('tamanho_roupa', '')      # NOVO
+        estilo_favorito = request.POST.get('estilo_favorito', '')
+        tamanho_roupa = request.POST.get('tamanho_roupa', '')
 
         # Cria o usuário
         user = User.objects.create_user(username=email, email=email, password=senha)
@@ -32,13 +34,20 @@ def cadastro(request):
         Perfil.objects.create(
             user=user, 
             nome_completo=nome,
-            estilo_favorito=estilo_favorito,    # NOVO
-            tamanho_roupa=tamanho_roupa         # NOVO
+            estilo_favorito=estilo_favorito,
+            tamanho_roupa=tamanho_roupa
         )
 
         return redirect('login')
     return render(request, 'cadastro.html')
 
+# PÁGINA DE CONSULTA DE USUÁRIOS
+@method_decorator(login_required, name='dispatch')
+class ConsultaUsuariosView(View):
+    def get(self, request, *args, **kwargs):
+        usuarios = Perfil.objects.all().select_related('user')
+        contexto = { 'usuarios': usuarios }
+        return render(request, 'usuario/consulta_usuarios.html', contexto)
 
 @login_required(login_url='login')
 def index(request):
@@ -60,3 +69,4 @@ def estilos(request):
 def comentarios(request):
     return render(request, 'comentarios.html')
 
+    
