@@ -14,6 +14,11 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('cadastro/', views.cadastro, name='cadastro'),
     
-    # NOVA ROTA: Página de consulta
+    # Página de consulta
     path('consulta/', views.ConsultaUsuariosView.as_view(), name='consulta_usuarios'),
+    
+    # NOVAS ROTAS: Consulta com filtro
+    path('buscar/', views.busca_usuario, name='busca_usuario'),
+    path('resultado-busca/', views.resultado_busca, name='resultado_busca'),
 ]
+

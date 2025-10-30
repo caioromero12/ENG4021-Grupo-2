@@ -49,6 +49,32 @@ class ConsultaUsuariosView(View):
         contexto = { 'usuarios': usuarios }
         return render(request, 'usuario/consulta_usuarios.html', contexto)
 
+# CONSULTA COM FILTRO
+def busca_usuario(request):
+    """Página de busca - formulário"""
+    return render(request, 'usuario/busca_usuario.html')
+
+def resultado_busca(request):
+    """Resultado da busca com filtros"""
+    estilo_busca = request.GET.get('estilo', '')
+    tamanho_busca = request.GET.get('tamanho', '')
+    
+    # Começa com todos os usuários
+    usuarios = Perfil.objects.all().select_related('user')
+    
+    # Aplica filtros se foram preenchidos
+    if estilo_busca:
+        usuarios = usuarios.filter(estilo_favorito__icontains=estilo_busca)
+    if tamanho_busca:
+        usuarios = usuarios.filter(tamanho_roupa__icontains=tamanho_busca)
+    
+    contexto = {
+        'usuarios': usuarios,
+        'estilo_buscado': estilo_busca,
+        'tamanho_buscado': tamanho_busca
+    }
+    return render(request, 'usuario/resultado_busca.html', contexto)
+
 @login_required(login_url='login')
 def index(request):
     return render(request, 'index.html')
