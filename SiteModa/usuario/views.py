@@ -94,5 +94,4 @@ def estilos(request):
 @login_required(login_url='login')
 def comentarios(request):
     return render(request, 'comentarios.html')
-
     
