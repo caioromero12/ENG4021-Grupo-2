@@ -15,6 +15,7 @@
 
         <form method="post">
             {% csrf_token %}
+            
             <label for="nome">Nome completo</label>
             <input type="text" id="nome" name="nome" required>
 
@@ -23,6 +24,13 @@
 
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha" required>
+
+            <!-- CAMPOS NOVOS PARA MODA -->
+            <label for="estilo_favorito">Seu estilo favorito (opcional)</label>
+            <input type="text" id="estilo_favorito" name="estilo_favorito" placeholder="Ex: casual, esportivo, formal...">
+
+            <label for="tamanho_roupa">Seu tamanho de roupa (opcional)</label>
+            <input type="text" id="tamanho_roupa" name="tamanho_roupa" placeholder="Ex: P, M, G, 38, 40...">
 
             <button type="submit">Cadastrar</button>
         </form>
@@ -35,4 +43,3 @@
     </div>
 </main>
 {% endblock %}
-

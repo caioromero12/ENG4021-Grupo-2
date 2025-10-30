@@ -23,10 +23,18 @@ def cadastro(request):
         nome = request.POST['nome']
         email = request.POST['email']
         senha = request.POST['senha']
+        estilo_favorito = request.POST.get('estilo_favorito', '')  # NOVO
+        tamanho_roupa = request.POST.get('tamanho_roupa', '')      # NOVO
 
         # Cria o usuário
         user = User.objects.create_user(username=email, email=email, password=senha)
-        Perfil.objects.create(user=user, nome_completo=nome)
+        # Cria o perfil com os novos campos
+        Perfil.objects.create(
+            user=user, 
+            nome_completo=nome,
+            estilo_favorito=estilo_favorito,    # NOVO
+            tamanho_roupa=tamanho_roupa         # NOVO
+        )
 
         return redirect('login')
     return render(request, 'cadastro.html')
