@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Moda e Sociedade - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/moda_sociedade.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="conteudo">
+    <div class="texto">
+        <h1>Moda e Sociedade</h1>
+        <p>Torne-se um expert sobre Moda!</p>
+    </div>
+</section>
+
+<section class="box">
+    <div id="box1">
+        <h2>História da Moda</h2>
+        <img src="{% static 'img/modaTimeline.jpg' %}" alt="Timeline Moda">
+        <h3>Clique <a href="#">aqui</a> para conhecer mais sobre a evolução da moda ao longo do tempo!</h3>
+    </div>
+    <br>
+    <br>
+    <div id="box2">
+        <h2>Principais Estilos</h2>
+        <img src="{% static 'img/estilosModa.png' %}" alt="Estilos de Moda">
+        <h3>Clique <a href="{% url 'estilos' %}">aqui</a> para conhecer os principais estilos de moda das peças que você poderá adquirir conosco!</h3>
+    </div>
+</section>
+{% endblock %}
+
