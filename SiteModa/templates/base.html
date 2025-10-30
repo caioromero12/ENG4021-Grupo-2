@@ -16,11 +16,13 @@
         <nav class="navbar">
             <div class="logo"><a href="{% url 'index' %}">ClosetLab</a></div>
             <ul class="nav-links">
-                <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
-                <li><a href="{% url 'index' %}#produtos">Nossos Produtos</a></li>
-                <li><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></li>
-                <li><a href="{% url 'index' %}#consultoria">Consultoria</a></li>
-            </ul>            
+    <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
+    <li><a href="{% url 'index' %}#produtos">Nossos Produtos</a></li>
+    <li><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></li>
+    <li><a href="{% url 'index' %}#consultoria">Consultoria</a></li>
+    <li><a href="{% url 'consulta_usuarios' %}">👥 Comunidade</a></li>
+    <li><a href="{% url 'busca_usuario' %}">🔍 Buscar</a></li>  <!-- LINHA NOVA -->
+</ul>
             {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post" class="d-inline">
                     {% csrf_token %}
