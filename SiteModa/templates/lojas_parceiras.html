@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Lojas Parceiras - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/lojas_parceiras.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="lojas-parceiras">
+    <div class="lojas-header">
+        <h1>Nossas Lojas Parceiras</h1>
+        <p>Conheça as marcas que fazem parte do nosso ecossistema e oferecem as melhores opções para compor seu estilo único</p>
+    </div>
+
+    <div class="lojas-grid">
+        <!-- RENNER -->
+        <div class="loja-card">
+            <img src="https://images.unsplash.com/photo-1558769132-cb25c5d1d1c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                 alt="Renner" class="loja-imagem">
+            <h3>Renner</h3>
+            <p>Uma das maiores redes de varejo de moda do Brasil, oferecendo tendências atuais com qualidade e preços acessíveis para toda a família.</p>
+            <a href="https://www.lojasrenner.com.br" target="_blank" class="loja-link">Visitar Site</a>
+        </div>
+
+        <!-- C&A -->
+        <div class="loja-card">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                 alt="C&A" class="loja-imagem">
+            <h3>C&A</h3>
+            <p>Marca tradicional com mais de 180 anos de história, conhecida por seu compromisso com moda sustentável e estilo para todas as ocasiões.</p>
+            <a href="https://www.cea.com.br" target="_blank" class="loja-link">Visitar Site</a>
+        </div>
+
+        <!-- ZARA -->
+        <div class="loja-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                 alt="Zara" class="loja-imagem">
+            <h3>Zara</h3>
+            <p>Líder global em fast fashion, trazendo as últimas tendências das passarelas internacionais para o seu dia a dia com agilidade e estilo.</p>
+            <a href="https://www.zara.com/br" target="_blank" class="loja-link">Visitar Site</a>
+        </div>
+
+        <!-- RIACHUELO -->
+        <div class="loja-card">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                 alt="Riachuelo" class="loja-imagem">
+            <h3>Riachuelo</h3>
+            <p>Marca brasileira que combina moda, qualidade e preço justo, com coleções completas para moda feminina, masculina e infantil.</p>
+            <a href="https://www.riachuelo.com.br" target="_blank" class="loja-link">Visitar Site</a>
+        </div>
+
+        <!-- GARAGE -->
+        <div class="loja-card">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                 alt="Garage" class="loja-imagem">
+            <h3>Garage</h3>
+            <p>Especializada em moda jovem e despojada, oferece peças cheias de personalidade para quem quer expressar seu estilo único.</p>
+            <a href="https://www.garage.com.br" target="_blank" class="loja-link">Visitar Site</a>
+        </div>
+    </div>
+
+    <div class="parceria-vantagens">
+        <h2>Vantagens das Nossas Parcerias</h2>
+        <div class="vantagens-grid">
+            <div class="vantagem-item">
+                <div class="vantagem-icon">🛍️</div>
+                <h4>Descontos Exclusivos</h4>
+                <p>Clientes ClosetLab recebem descontos especiais em todas as lojas parceiras</p>
+            </div>
+            <div class="vantagem-item">
+                <div class="vantagem-icon">🚚</div>
+                <h4>Frete Grátis</h4>
+                <p>Benefício de frete gratuito em compras acima de valores determinados</p>
+            </div>
+            <div class="vantagem-item">
+                <div class="vantagem-icon">⭐</div>
+                <h4>Atendimento Premium</h4>
+                <p>Atendimento prioritário e personalizado nas lojas físicas</p>
+            </div>
+            <div class="vantagem-item">
+                <div class="vantagem-icon">🔄</div>
+                <h4>Troca Facilitada</h4>
+                <p>Processo de trocas e devoluções simplificado para clientes ClosetLab</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,185 @@
+/* lojas-parceiras.css - Combinando com o tema ClosetLab */
+.lojas-parceiras {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lojas-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.lojas-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--marrom);
+    margin-bottom: 20px;
+}
+
+.lojas-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    color: var(--marrom);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.lojas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.loja-card {
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(122, 91, 71, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.loja-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(122, 91, 71, 0.15);
+    border-color: var(--caramelo);
+}
+
+.loja-imagem {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bege-claro);
+    box-shadow: 0 5px 15px rgba(122, 91, 71, 0.1);
+}
+
+.loja-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--marrom);
+    margin-bottom: 15px;
+}
+
+.loja-card p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--marrom);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.loja-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--marrom);
+    color: var(--branco);
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--marrom);
+}
+
+.loja-link:hover {
+    background: transparent;
+    color: var(--marrom);
+    transform: scale(1.05);
+}
+
+.parceria-vantagens {
+    background: var(--branco);
+    padding: 60px 40px;
+    margin-top: 60px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(122, 91, 71, 0.1);
+}
+
+.parceria-vantagens h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--marrom);
+    margin-bottom: 40px;
+}
+
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.vantagem-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.vantagem-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--marrom);
+    margin: 20px 0 10px;
+}
+
+.vantagem-item p {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--marrom);
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+.vantagem-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* Estados dos botões para combinar com o tema */
+.btn-login a {
+    color: var(--marrom);
+    text-decoration: none;
+}
+
+.btn-login:hover {
+    background: var(--bege-claro);
+}
+
+@media (max-width: 768px) {
+    .lojas-header h1 {
+        font-size: 2rem;
+    }
+    
+    .lojas-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .loja-card {
+        padding: 20px;
+    }
+    
+    .loja-imagem {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .parceria-vantagens {
+        padding: 40px 20px;
+        margin-top: 40px;
+    }
+    
+    .vantagens-grid {
+        gap: 20px;
+    }
+    
+    .lojas-parceiras {
+        padding: 40px 5%;
+    }
+}

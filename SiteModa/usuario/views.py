@@ -94,6 +94,9 @@ def estilos(request):
 @login_required(login_url='login')
 def comentarios(request):
     return render(request, 'comentarios.html')
+
+def lojas_parceiras(request):
+    return render(request, 'lojas_parceiras.html')
     
 
     
