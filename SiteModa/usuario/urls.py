@@ -29,4 +29,8 @@ urlpatterns = [
     # Busca com filtro
     path('buscar/', views.busca_usuario, name='busca_usuario'),
     path('resultado-busca/', views.resultado_busca, name='resultado_busca'),
+
+    # PÁGINAS DE PRODUTOS
+    path('nossos-produtos-boho/', views.nossosProdutosBoho, name='nossosProdutosBoho'),
+    path('nossos-produtos-street/', views.nossosProdutosOutfitStreet, name='nossosProdutosOutfitStreet'),
 ]
