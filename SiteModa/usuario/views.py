@@ -28,9 +28,8 @@ def cadastro(request):
         estilo_favorito = request.POST.get('estilo_favorito', '')
         tamanho_roupa = request.POST.get('tamanho_roupa', '')
 
-        # Cria o usuário
         user = User.objects.create_user(username=email, email=email, password=senha)
-        # Cria o perfil com os novos campos
+
         Perfil.objects.create(
             user=user, 
             nome_completo=nome,
@@ -41,7 +40,7 @@ def cadastro(request):
         return redirect('login')
     return render(request, 'cadastro.html')
 
-# PÁGINA DE CONSULTA DE USUÁRIOS
+
 @method_decorator(login_required, name='dispatch')
 class ConsultaUsuariosView(View):
     def get(self, request, *args, **kwargs):
@@ -49,20 +48,17 @@ class ConsultaUsuariosView(View):
         contexto = { 'usuarios': usuarios }
         return render(request, 'usuario/consulta_usuarios.html', contexto)
 
-# CONSULTA COM FILTRO
+
 def busca_usuario(request):
-    """Página de busca - formulário"""
     return render(request, 'usuario/busca_usuario.html')
 
+
 def resultado_busca(request):
-    """Resultado da busca com filtros"""
     estilo_busca = request.GET.get('estilo', '')
     tamanho_busca = request.GET.get('tamanho', '')
     
-    # Começa com todos os usuários
     usuarios = Perfil.objects.all().select_related('user')
     
-    # Aplica filtros se foram preenchidos
     if estilo_busca:
         usuarios = usuarios.filter(estilo_favorito__icontains=estilo_busca)
     if tamanho_busca:
@@ -74,6 +70,7 @@ def resultado_busca(request):
         'tamanho_buscado': tamanho_busca
     }
     return render(request, 'usuario/resultado_busca.html', contexto)
+
 
 @login_required(login_url='login')
 def index(request):
@@ -95,8 +92,22 @@ def estilos(request):
 def comentarios(request):
     return render(request, 'comentarios.html')
 
+@login_required(login_url='login')
 def lojas_parceiras(request):
     return render(request, 'lojas_parceiras.html')
-    
 
-    
+@login_required(login_url='login')
+def timeline(request):
+    return render(request, 'timeline.html')
+
+@login_required(login_url='login')
+def consultoria(request):
+    return render(request, 'consultoria.html')
+
+@login_required(login_url='login')
+def atendimento(request):
+    return render(request, 'atendimento.html')
+
+@login_required(login_url='login')
+def formulario(request):
+    return render(request, 'formulario.html')

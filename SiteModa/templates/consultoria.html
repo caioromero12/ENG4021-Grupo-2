@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Consultoria — ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/consultoria.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="cabecalho-consultoria">
+    <h1>Consultoria de Estilo</h1>
+    <p>Descubra seu estilo, aprenda a se expressar através da moda e transforme sua relação com o vestir.</p>
+</section>
+
+<section class="consultoria-opcoes">
+
+    <div class="opcao">
+        <img src="{% static 'img/consultoria_formulario.jpg' %}" alt="Formulário de estilo">
+        <h2><a href="{% url 'formulario' %}">Formulário</a></h2>
+        <p>Responda perguntas que nos ajudam a entender suas preferências, rotina e estilo. O primeiro passo para sua transformação.</p>
+    </div>
+
+    <div class="opcao">
+        <img src="{% static 'img/consultoria_atendimento.jpg' %}" alt="Atendimento presencial">
+        <h2><a href="{% url 'atendimento' %}">Atendimento Presencial</a></h2>
+        <p>Encontros personalizados com nossos especialistas, focados em te ajudar a encontrar seu estilo ideal.</p>
+    </div>
+
+    <div class="opcao">
+        <img src="{% static 'img/consultoria_comentarios.jpg' %}" alt="Comentários de clientes">
+        <h2><a href="{% url 'comentarios' %}">Comentários</a></h2>
+        <p>Veja a opinião de clientes que participaram da consultoria e entenda como a ClosetLab transformou suas experiências.</p>
+    </div>
+
+</section>
+
+{% endblock %}
+

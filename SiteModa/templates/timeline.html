@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Linha do Tempo da Moda - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="timeline-header">
+    <h1>Evolução da Moda ao Longo das Décadas</h1>
+    <p>Explore como a moda transformou comportamentos, estilos e formas de expressão ao longo da história.</p>
+</section>
+
+<section class="timeline">
+
+    <!-- 1920 -->
+    <div class="timeline-item left">
+        <div class="image">
+            <img src="{% static 'img/timeline/1920.jpg' %}" alt="Moda anos 1920">
+        </div>
+        <div class="content">
+            <h2>Anos 1920</h2>
+            <p>A década marcada pelo estilo “flapper”: vestidos retos, franjas, pérolas e a libertação feminina após a Primeira Guerra Mundial.</p>
+        </div>
+    </div>
+
+    <!-- 1950 -->
+    <div class="timeline-item right">
+        <div class="image">
+            <img src="{% static 'img/timeline/1950.jpg' %}" alt="Moda anos 1950">
+        </div>
+        <div class="content">
+            <h2>Anos 1950</h2>
+            <p>Saia godê, cintura marcada e influência de ícones como Marilyn Monroe trouxeram feminilidade romântica para o período pós-guerra.</p>
+        </div>
+    </div>
+
+    <!-- 1970 -->
+    <div class="timeline-item left">
+        <div class="image">
+            <img src="{% static 'img/timeline/1970.jpg' %}" alt="Moda anos 1970">
+        </div>
+        <div class="content">
+            <h2>Anos 1970</h2>
+            <p>Era do movimento hippie e disco: estampas psicodélicas, calças boca de sino e muito brilho.</p>
+        </div>
+    </div>
+
+    <!-- 1990 -->
+    <div class="timeline-item right">
+        <div class="image">
+            <img src="{% static 'img/timeline/1990.jpg' %}" alt="Moda anos 1990">
+        </div>
+        <div class="content">
+            <h2>Anos 1990</h2>
+            <p>Minimalismo, jeans de cintura baixa, camisetas básicas e o surgimento dos estilos grunge e streetwear.</p>
+        </div>
+    </div>
+
+    <!-- 2000 -->
+    <div class="timeline-item left">
+        <div class="image">
+            <img src="{% static 'img/timeline/2000.jpg' %}" alt="Moda anos 2000">
+        </div>
+        <div class="content">
+            <h2>Anos 2000</h2>
+            <p>Tops brilhantes, tênis plataforma, veludo molhado, bonés e todo o exagero da estética Y2K.</p>
+        </div>
+    </div>
+
+    <!-- 2010–2020 -->
+    <div class="timeline-item right">
+        <div class="image">
+            <img src="{% static 'img/timeline/2010.jpg' %}" alt="Moda anos 2010–2020">
+        </div>
+        <div class="content">
+            <h2>2010–2020</h2>
+            <p>Fast fashion, influência digital, moda sustentável e a mistura de estilos marcaram a década.</p>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

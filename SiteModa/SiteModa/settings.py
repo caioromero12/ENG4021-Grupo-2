@@ -16,6 +16,7 @@ DEBUG = True
 
 # CONFIGURAÇÃO DE SEGURANÇA - PERMITE ACESSAR SEU SITE LOCALMENTE
 ALLOWED_HOSTS = [
+    'moonlit-casket-pjqqj6r76r9w37xqw-5800.app.github.dev',
     'localhost',
     '127.0.0.1',
     '0.0.0.0',
@@ -23,6 +24,7 @@ ALLOWED_HOSTS = [
 
 # CONFIGURAÇÃO QUE RESOLVE O PROBLEMA DO LOGIN/CADASTRO
 CSRF_TRUSTED_ORIGINS = [
+    'https://moonlit-casket-pjqqj6r76r9w37xqw-5800.app.github.dev',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'http://localhost:8800',
@@ -32,6 +34,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:5800',      # ADICIONE ESTA  
     'https://localhost:5800',      # ADICIONE ESTA
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # CONFIGURAÇÕES DE COOKIES PARA DESENVOLVIMENTO
 CSRF_COOKIE_SECURE = False
