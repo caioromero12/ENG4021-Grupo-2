@@ -1,0 +1,131 @@
+:root {
+    --bege-claro: #fdf8f3;
+    --marrom: #7a5b47;
+    --caramelo: #b37a4c;
+    --preto: #111;
+    --branco: #fff;
+}
+
+/* Layout geral */
+.timeline-header {
+    text-align: center;
+    padding: 4rem 5%;
+}
+
+.timeline-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--marrom);
+    margin-bottom: 1rem;
+}
+
+.timeline-header p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--marrom);
+}
+
+/* Linha vertical */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    padding: 3rem 0;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: var(--marrom);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Itens */
+.timeline-item {
+    padding: 2rem;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item .content {
+    background: var(--bege-claro);
+    border: 1px solid #d9c8b8;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px #00000011;
+}
+
+.timeline-item h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--marrom);
+    margin-bottom: 0.8rem;
+}
+
+.timeline-item p {
+    color: var(--marrom);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--caramelo);
+    border: 3px solid var(--branco);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.left::after {
+    right: -9px;
+}
+
+.timeline-item.right::after {
+    left: -9px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        text-align: left !important;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item.left {
+        left: 0;
+    }
+
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+        left: 12px;
+    }
+}
+

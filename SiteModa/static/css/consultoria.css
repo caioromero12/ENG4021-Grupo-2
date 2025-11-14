@@ -1,0 +1,91 @@
+:root {
+    --bege-claro: #fdf8f3;
+    --marrom: #7a5b47;
+    --caramelo: #b37a4c;
+    --preto: #111;
+    --branco: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bege-claro);
+    color: var(--marrom);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* ---------- TÍTULO ---------- */
+
+.cabecalho-consultoria {
+    text-align: center;
+    padding: 4rem 5%;
+}
+
+.cabecalho-consultoria h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.cabecalho-consultoria p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* ---------- GRID DE OPÇÕES ---------- */
+
+.consultoria-opcoes {
+    padding: 3rem 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+.opcao {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform .3s ease;
+}
+
+.opcao:hover {
+    transform: translateY(-5px);
+}
+
+.opcao img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.opcao h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.opcao h2 a {
+    color: var(--marrom);
+    text-decoration: none;
+}
+
+.opcao h2 a:hover {
+    text-decoration: underline;
+}
+
+.opcao p {
+    margin-top: 0.3rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cabecalho-consultoria h1 {
+        font-size: 1.9rem;
+    }
+}
