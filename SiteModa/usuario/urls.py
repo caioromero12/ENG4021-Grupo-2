@@ -8,6 +8,8 @@ urlpatterns = [
     path('moda-sociedade/', views.moda_sociedade, name='moda_sociedade'),
     path('estilos/', views.estilos, name='estilos'),
     path('comentarios/', views.comentarios, name='comentarios'),
+    path('lojas-parceiras/', views.lojas_parceiras, name='lojas_parceiras'),
+
 
     # Rotas de autenticação
     path('login/', views.login_custom, name='login'),
