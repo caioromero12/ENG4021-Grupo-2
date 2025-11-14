@@ -111,3 +111,11 @@ def atendimento(request):
 @login_required(login_url='login')
 def formulario(request):
     return render(request, 'formulario.html')
+
+@login_required(login_url='login')
+def nossosProdutosBoho(request):
+    return render(request, 'nossosProdutosBoho.html')
+
+@login_required(login_url='login')
+def nossosProdutosOutfitStreet(request):
+    return render(request, 'nossosProdutosOutfitStreet.html')
