@@ -143,3 +143,8 @@ def nossosProdutosBoho(request):
 @login_required(login_url='login')
 def nossosProdutosOutfitStreet(request):
     return render(request, 'nossosProdutosOutfitStreet.html')
+
+
+def parceiros(request):
+    """View para página Como se Tornar Afiliado"""
+    return render(request, 'parceiros.html')
