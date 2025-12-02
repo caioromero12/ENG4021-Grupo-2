@@ -1,0 +1,516 @@
+{% extends 'base.html' %}
+
+{% block title %}Atendimento Presencial - ClosetLab{% endblock %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/atendimento.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-atendimento">
+    <div class="hero-content">
+        <h1><i class="fas fa-calendar-check"></i> Atendimento Presencial</h1>
+        <p class="hero-subtitle">Experiência personalizada em consultoria de estilo</p>
+        
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <i class="fas fa-user-check"></i>
+                <div>
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Clientes atendidos</span>
+                </div>
+            </div>
+            <div class="hero-stat">
+                <i class="fas fa-star"></i>
+                <div>
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">Avaliação média</span>
+                </div>
+            </div>
+            <div class="hero-stat">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Localizações</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Como funciona -->
+<section class="como-funciona">
+    <h2 class="section-title"><i class="fas fa-play-circle"></i> Como funciona o atendimento</h2>
+    
+    <div class="passos-container">
+        <div class="passo">
+            <div class="passo-numero">1</div>
+            <div class="passo-conteudo">
+                <h3>Agendamento</h3>
+                <p>Escolha a data e horário que melhor se encaixam na sua agenda</p>
+            </div>
+        </div>
+        
+        <div class="passo">
+            <div class="passo-numero">2</div>
+            <div class="passo-conteudo">
+                <h3>Questionário de estilo</h3>
+                <p>Preencha um breve formulário sobre suas preferências e necessidades</p>
+            </div>
+        </div>
+        
+        <div class="passo">
+            <div class="passo-numero">3</div>
+            <div class="passo-conteudo">
+                <h3>Encontro presencial</h3>
+                <p>Nossa consultora te recebe em um de nossos espaços exclusivos</p>
+            </div>
+        </div>
+        
+        <div class="passo">
+            <div class="passo-numero">4</div>
+            <div class="passo-conteudo">
+                <h3>Transformação completa</h3>
+                <p>Saia com um guarda-roupa alinhado ao seu estilo e objetivos</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Serviços -->
+<section class="servicos">
+    <h2 class="section-title"><i class="fas fa-concierge-bell"></i> Nossos Serviços Presenciais</h2>
+    
+    <div class="servicos-grid">
+        <div class="servico-card">
+            <div class="servico-icon">
+                <i class="fas fa-tshirt"></i>
+            </div>
+            <h3>Consulta de Guarda-Roupa</h3>
+            <ul>
+                <li>Análise do seu atual guarda-roupa</li>
+                <li>Identificação de peças-chave faltantes</li>
+                <li>Organização por ocasiões</li>
+                <li>Duração: 3 horas</li>
+            </ul>
+            <div class="servico-preco">R$ 350</div>
+        </div>
+        
+        <div class="servico-card">
+            <div class="servico-icon">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <h3>Personal Shopping</h3>
+            <ul>
+                <li>Acompanhamento em compras</li>
+                <li>Seleção de peças sob medida</li>
+                <li>Orientação de combinações</li>
+                <li>Duração: 4 horas</li>
+            </ul>
+            <div class="servico-preco">R$ 450</div>
+        </div>
+        
+        <div class="servico-card">
+            <div class="servico-icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Estilo Profissional</h3>
+            <ul>
+                <li>Montagem de looks corporativos</li>
+                <li>Consultoria para entrevistas</li>
+                <li>Imagem profissional</li>
+                <li>Duração: 2,5 horas</li>
+            </ul>
+            <div class="servico-preco">R$ 300</div>
+        </div>
+        
+        <div class="servico-card">
+            <div class="servico-icon">
+                <i class="fas fa-gem"></i>
+            </div>
+            <h3>Pacote Completo</h3>
+            <ul>
+                <li>Guarda-roupa + Personal Shopping</li>
+                <li>2 acompanhamentos pós-consulta</li>
+                <li>E-book exclusivo de estilo</li>
+                <li>Duração: 6 horas</li>
+            </ul>
+            <div class="servico-preco">R$ 650</div>
+            <div class="servico-destaque">Mais Popular</div>
+        </div>
+    </div>
+</section>
+
+<!-- Localizações -->
+<section class="localizacoes">
+    <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> Nossos Espaços</h2>
+    
+    <div class="locais-grid">
+        <div class="local-card">
+            <div class="local-imagem">
+                <i class="fas fa-store-alt"></i>
+            </div>
+            <h3>São Paulo - Jardins</h3>
+            <p class="local-endereço">
+                <i class="fas fa-map-marker-alt"></i> Rua Oscar Freire, 1234
+            </p>
+            <p class="local-horario">
+                <i class="fas fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 10h-16h
+            </p>
+            <div class="local-detalhes">
+                <span><i class="fas fa-wifi"></i> WiFi</span>
+                <span><i class="fas fa-coffee"></i> Café</span>
+                <span><i class="fas fa-parking"></i> Estacionamento</span>
+            </div>
+        </div>
+        
+        <div class="local-card">
+            <div class="local-imagem">
+                <i class="fas fa-store-alt"></i>
+            </div>
+            <h3>Rio de Janeiro - Ipanema</h3>
+            <p class="local-endereço">
+                <i class="fas fa-map-marker-alt"></i> Av. Visconde de Pirajá, 567
+            </p>
+            <p class="local-horario">
+                <i class="fas fa-clock"></i> Seg-Sex: 10h-19h | Sáb: 11h-17h
+            </p>
+            <div class="local-detalhes">
+                <span><i class="fas fa-wifi"></i> WiFi</span>
+                <span><i class="fas fa-umbrella-beach"></i> Vista mar</span>
+                <span><i class="fas fa-parking"></i> Valet</span>
+            </div>
+        </div>
+        
+        <div class="local-card">
+            <div class="local-imagem">
+                <i class="fas fa-store-alt"></i>
+            </div>
+            <h3>Belo Horizonte - Savassi</h3>
+            <p class="local-endereço">
+                <i class="fas fa-map-marker-alt"></i> Rua Pernambuco, 890
+            </p>
+            <p class="local-horario">
+                <i class="fas fa-clock"></i> Seg-Sex: 9h-18h | Sáb: 10h-15h
+            </p>
+            <div class="local-detalhes">
+                <span><i class="fas fa-wifi"></i> WiFi</span>
+                <span><i class="fas fa-coffee"></i> Café especial</span>
+                <span><i class="fas fa-music"></i> Ambiente musical</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formulário de Agendamento -->
+<section class="agendamento" id="agendar">
+    <h2 class="section-title"><i class="fas fa-calendar-alt"></i> Agende seu Atendimento</h2>
+    
+    <div class="form-agendamento-container">
+        <form class="form-agendamento">
+            <div class="form-etapa form-etapa-ativa" id="etapa1">
+                <h3>1. Escolha o serviço</h3>
+                
+                <div class="servicos-opcoes">
+                    <div class="opcao-servico">
+                        <input type="radio" id="servico1" name="servico" value="guarda-roupa" checked>
+                        <label for="servico1">
+                            <strong>Consulta de Guarda-Roupa</strong>
+                            <span>R$ 350 • 3 horas</span>
+                        </label>
+                    </div>
+                    
+                    <div class="opcao-servico">
+                        <input type="radio" id="servico2" name="servico" value="personal-shopping">
+                        <label for="servico2">
+                            <strong>Personal Shopping</strong>
+                            <span>R$ 450 • 4 horas</span>
+                        </label>
+                    </div>
+                    
+                    <div class="opcao-servico">
+                        <input type="radio" id="servico3" name="servico" value="estilo-profissional">
+                        <label for="servico3">
+                            <strong>Estilo Profissional</strong>
+                            <span>R$ 300 • 2,5 horas</span>
+                        </label>
+                    </div>
+                    
+                    <div class="opcao-servico">
+                        <input type="radio" id="servico4" name="servico" value="pacote-completo">
+                        <label for="servico4">
+                            <strong>Pacote Completo</strong>
+                            <span>R$ 650 • 6 horas</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn-proximo" onclick="proximaEtapa(2)">Próximo <i class="fas fa-arrow-right"></i></button>
+            </div>
+            
+            <div class="form-etapa" id="etapa2">
+                <h3>2. Selecione local e data</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="local">Local *</label>
+                        <select id="local" required>
+                            <option value="">Escolha uma localização</option>
+                            <option value="sp">São Paulo - Jardins</option>
+                            <option value="rj">Rio de Janeiro - Ipanema</option>
+                            <option value="bh">Belo Horizonte - Savassi</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="data">Data *</label>
+                        <input type="date" id="data" required min="{{ hoje }}">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Horários disponíveis</label>
+                    <div class="horarios-grid">
+                        <label class="horario-opcao">
+                            <input type="radio" name="horario" value="09:00" required>
+                            <span>09:00</span>
+                        </label>
+                        <label class="horario-opcao">
+                            <input type="radio" name="horario" value="10:30" required>
+                            <span>10:30</span>
+                        </label>
+                        <label class="horario-opcao">
+                            <input type="radio" name="horario" value="14:00" required>
+                            <span>14:00</span>
+                        </label>
+                        <label class="horario-opcao">
+                            <input type="radio" name="horario" value="15:30" required>
+                            <span>15:30</span>
+                        </label>
+                        <label class="horario-opcao">
+                            <input type="radio" name="horario" value="17:00" required>
+                            <span>17:00</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="botoes-etapa">
+                    <button type="button" class="btn-voltar" onclick="voltarEtapa(1)">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                    <button type="button" class="btn-proximo" onclick="proximaEtapa(3)">
+                        Próximo <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="form-etapa" id="etapa3">
+                <h3>3. Seus dados</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nome">Nome completo *</label>
+                        <input type="text" id="nome" required placeholder="Seu nome completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" required placeholder="seu@email.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefone">Telefone/WhatsApp *</label>
+                        <input type="tel" id="telefone" required placeholder="(11) 99999-9999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram">Instagram (opcional)</label>
+                        <input type="text" id="instagram" placeholder="@seuusuario">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="objetivo">Objetivo da consulta *</label>
+                    <textarea id="objetivo" rows="3" required placeholder="Conte um pouco sobre suas necessidades de estilo, ocasiões, preferências..."></textarea>
+                </div>
+                
+                <div class="form-group checkbox-termos">
+                    <input type="checkbox" id="termos" required>
+                    <label for="termos">
+                        Concordo com os <a href="#">termos e condições</a> do serviço e autorizo o contato para confirmação
+                    </label>
+                </div>
+                
+                <div class="botoes-etapa">
+                    <button type="button" class="btn-voltar" onclick="voltarEtapa(2)">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                    <button type="submit" class="btn-confirmar">
+                        <i class="fas fa-calendar-check"></i> Confirmar Agendamento
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <div class="resumo-agendamento">
+            <h3><i class="fas fa-receipt"></i> Resumo do Agendamento</h3>
+            <div class="resumo-content">
+                <div class="resumo-item">
+                    <strong>Serviço:</strong>
+                    <span id="resumo-servico">Consulta de Guarda-Roupa</span>
+                </div>
+                <div class="resumo-item">
+                    <strong>Local:</strong>
+                    <span id="resumo-local">-</span>
+                </div>
+                <div class="resumo-item">
+                    <strong>Data:</strong>
+                    <span id="resumo-data">-</span>
+                </div>
+                <div class="resumo-item">
+                    <strong>Horário:</strong>
+                    <span id="resumo-horario">-</span>
+                </div>
+                <div class="resumo-item">
+                    <strong>Valor:</strong>
+                    <span id="resumo-valor">R$ 350</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <h2 class="section-title"><i class="fas fa-question-circle"></i> Perguntas Frequentes</h2>
+    
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-pergunta">
+                Posso reagendar meu atendimento?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-resposta">
+                <p>Sim, você pode reagendar até 48 horas antes do horário marcado sem custos adicionais. Entre em contato pelo e-mail atendimento@closetlab.com.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-pergunta">
+                O que devo levar para a consulta?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-resposta">
+                <p>Recomendamos trazer algumas peças favoritas do seu guarda-roupa e fotos de looks que gosta. Para personal shopping, venha com roupas confortáveis.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-pergunta">
+                Aceitam cartão de crédito?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-resposta">
+                <p>Sim, aceitamos todas as bandeiras de cartão de crédito, débito, PIX e transferência bancária. O pagamento é realizado no dia do atendimento.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <button class="faq-pergunta">
+                Posso cancelar o atendimento?
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-resposta">
+                <p>Cancelamentos com até 72 horas de antecedência têm reembolso integral. Entre 72 e 48 horas, 50% de reembolso. Menos de 48 horas, não há reembolso.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Script para o formulário multi-etapas
+    function proximaEtapa(etapa) {
+        document.querySelectorAll('.form-etapa').forEach(e => {
+            e.classList.remove('form-etapa-ativa');
+        });
+        document.getElementById('etapa' + etapa).classList.add('form-etapa-ativa');
+        atualizarResumo();
+    }
+    
+    function voltarEtapa(etapa) {
+        document.querySelectorAll('.form-etapa').forEach(e => {
+            e.classList.remove('form-etapa-ativa');
+        });
+        document.getElementById('etapa' + etapa).classList.add('form-etapa-ativa');
+    }
+    
+    function atualizarResumo() {
+        // Atualizar serviço
+        const servicoSelecionado = document.querySelector('input[name="servico"]:checked');
+        if (servicoSelecionado) {
+            const label = document.querySelector(`label[for="${servicoSelecionado.id}"] strong`);
+            document.getElementById('resumo-servico').textContent = label.textContent;
+            
+            // Atualizar valor
+            const valores = {
+                'servico1': 'R$ 350',
+                'servico2': 'R$ 450',
+                'servico3': 'R$ 300',
+                'servico4': 'R$ 650'
+            };
+            document.getElementById('resumo-valor').textContent = valores[servicoSelecionado.id];
+        }
+        
+        // Atualizar local
+        const localSelect = document.getElementById('local');
+        if (localSelect.value) {
+            document.getElementById('resumo-local').textContent = localSelect.options[localSelect.selectedIndex].text;
+        }
+        
+        // Atualizar data
+        const dataInput = document.getElementById('data');
+        if (dataInput.value) {
+            const data = new Date(dataInput.value);
+            document.getElementById('resumo-data').textContent = data.toLocaleDateString('pt-BR');
+        }
+        
+        // Atualizar horário
+        const horarioSelecionado = document.querySelector('input[name="horario"]:checked');
+        if (horarioSelecionado) {
+            document.getElementById('resumo-horario').textContent = horarioSelecionado.value;
+        }
+    }
+    
+    // Atualizar resumo quando elementos mudam
+    document.addEventListener('DOMContentLoaded', function() {
+        // Data mínima = hoje
+        const hoje = new Date().toISOString().split('T')[0];
+        document.getElementById('data').min = hoje;
+        
+        // Event listeners para atualizar resumo
+        document.querySelectorAll('input[name="servico"]').forEach(input => {
+            input.addEventListener('change', atualizarResumo);
+        });
+        
+        document.getElementById('local').addEventListener('change', atualizarResumo);
+        document.getElementById('data').addEventListener('change', atualizarResumo);
+        document.querySelectorAll('input[name="horario"]').forEach(input => {
+            input.addEventListener('change', atualizarResumo);
+        });
+        
+        // FAQ accordion
+        document.querySelectorAll('.faq-pergunta').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('faq-ativo');
+            });
+        });
+    });
+</script>
+{% endblock %}
