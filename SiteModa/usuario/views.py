@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+import logging
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
 from django.utils.decorators import method_decorator
 from .models import Perfil
+
+logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def login_custom(request):
@@ -24,7 +27,14 @@ def login_custom(request):
                 # qualquer erro aqui deixamos username como veio
                 username_to_auth = username
 
-        user = authenticate(request, username=username_to_auth, password=password)
+        # Log de depuração (NÃO logar a senha)
+        logger.info(f"Login attempt: form_username={username}, username_to_auth={username_to_auth}")
+        try:
+            user = authenticate(request, username=username_to_auth, password=password)
+            logger.info(f"Authentication result for {username_to_auth}: {'SUCCESS' if user is not None else 'FAIL'}")
+        except Exception as e:
+            logger.exception('Error during authenticate')
+            user = None
 
         if user is not None:
             login(request, user)
