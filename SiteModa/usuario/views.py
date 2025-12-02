@@ -2,15 +2,29 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
 from django.utils.decorators import method_decorator
 from .models import Perfil
 
+@csrf_exempt
 def login_custom(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        # Permitir autenticação usando email ou username: se o usuário
+        # enviar um email, buscar o username correspondente.
+        username_to_auth = username
+        if '@' in username:
+            try:
+                user_obj = User.objects.filter(email__iexact=username).first()
+                if user_obj:
+                    username_to_auth = user_obj.username
+            except Exception:
+                # qualquer erro aqui deixamos username como veio
+                username_to_auth = username
+
+        user = authenticate(request, username=username_to_auth, password=password)
 
         if user is not None:
             login(request, user)
