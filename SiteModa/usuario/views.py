@@ -137,15 +137,14 @@ def formulario(request):
     return render(request, 'formulario.html')
 
 @login_required(login_url='login')
-<<<<<<< HEAD
 def novidades(request):
     return render(request, 'novidades.html')
 
 @login_required(login_url='login')
 def country(request):
     return render(request, 'country.html')
-    
-=======
+
+@login_required(login_url='login')
 def nossosProdutosBoho(request):
     return render(request, 'nossosProdutosBoho.html')
 
@@ -157,4 +156,29 @@ def nossosProdutosOutfitStreet(request):
 def parceiros(request):
     """View para página Como se Tornar Afiliado"""
     return render(request, 'parceiros.html')
->>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2
+
+@login_required(login_url='login')
+def homeprodutos(request):
+    tamanho = request.GET.get('tamanho', '')
+
+    produtos = [
+        {"nome": "Bota Country", "tamanhos": ["P", "M", "G"], "img": "img/country/bota-country.jpg"},
+        {"nome": "Camisa Xadrez", "tamanhos": ["M", "G"], "img": "img/country/camisa-xadrez.jpg"},
+        {"nome": "Jeans Bootcut", "tamanhos": ["G"], "img": "img/country/jeans-retro.jpg"},
+        {"nome": "Colete de Couro", "tamanhos": ["P", "M"], "img": "img/country/colete-couro.jpg"},
+    ]
+
+    # Filtra pela seleção do usuário
+    if tamanho:
+        produtos = [p for p in produtos if tamanho in p["tamanhos"]]
+
+    contexto = {
+        "produtos": produtos,
+        "tamanho_selecionado": tamanho,
+    }
+
+    return render(request, 'homeprodutos.html', contexto)
+
+@login_required(login_url='login')
+def modaretro(request):
+    return render(request, 'modaretro.html')
