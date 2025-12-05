@@ -137,6 +137,15 @@ def formulario(request):
     return render(request, 'formulario.html')
 
 @login_required(login_url='login')
+<<<<<<< HEAD
+def novidades(request):
+    return render(request, 'novidades.html')
+
+@login_required(login_url='login')
+def country(request):
+    return render(request, 'country.html')
+    
+=======
 def nossosProdutosBoho(request):
     return render(request, 'nossosProdutosBoho.html')
 
@@ -148,3 +157,4 @@ def nossosProdutosOutfitStreet(request):
 def parceiros(request):
     """View para página Como se Tornar Afiliado"""
     return render(request, 'parceiros.html')
+>>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2

@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}ClosetLab: Estilo Que Transforma{% endblock %}</title>
     {% load static %}
+
+    <!-- Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS principal do site -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
+
+    <!-- CSS específico de cada página -->
     {% block extra_css %}{% endblock %}
 </head>
 
 <body>
+
     <header>
         <nav class="navbar">
             <div class="logo"><a href="{% url 'index' %}">ClosetLab</a></div>
             <ul class="nav-links">
-    <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
-    <li><a href="{% url 'index' %}#produtos">Nossos Produtos</a></li>
-    <li><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></li>
-    <li><a href="{% url 'consultoria' %}">Consultoria</a></li>
-    <li><a href="{% url 'consulta_usuarios' %}">👥 Comunidade</a></li>
-    <li><a href="{% url 'busca_usuario' %}">🔍 Buscar</a></li>  <!-- LINHA NOVA -->
-</ul>
+                <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
+                <li><a href="{% url 'index' %}#produtos">Nossos Produtos</a></li>
+                <li><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></li>
+                <li><a href="{% url 'consultoria' %}">Consultoria</a></li>
+                <li><a href="{% url 'consulta_usuarios' %}">👥 Comunidade</a></li>
+                <li><a href="{% url 'busca_usuario' %}">🔍 Buscar</a></li>
+            </ul>
+
             {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post" class="d-inline">
                     {% csrf_token %}
@@ -34,45 +44,62 @@
         </nav>
     </header>
 
+
     <main>
         {% block content %}
         {% endblock %}
     </main>
+
 
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
                 <h3><a href="{% url 'index' %}">ClosetLab</a></h3>
                 <br>
+
                 <div class="social">
                     <a href="https://www.facebook.com/" target="_blank"><img src="{% static 'img/facebook.png' %}" alt="Facebook"></a>
                     <a href="https://www.instagram.com/closetlabb?igsh=enVmMmJxeWdqbjZ4&utm_source=qr" target="_blank"><img src="{% static 'img/instagram.png' %}" alt="Instagram"></a>
                     <a href="https://youtube.com/@sofiarafful1171?si=rrQ0ATl_NErBdpJp" target="_blank"><img src="{% static 'img/youtube.png' %}" alt="YouTube"></a>
                 </div>
             </div>
+
             <div class="footer-links">
                 <ul>
                     <h4>Nossos Produtos</h4>
+<<<<<<< HEAD
+                    <li><a href="{% url 'lojas_parceiras' %}">Lojas Parceiras</a></li>                    
+                    <li><a href="{% url 'novidades' %}">Novidades</a></li>
+=======
                 <li><a href="{% url 'lojas_parceiras' %}">Lojas Parceiras</a></li>                    
                 <li><a href="{% url 'parceiros' %}">Como se tornar nosso parceiro</a></li>
+>>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2
                 </ul>
+
                 <ul>
                     <h4><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></h4>
                     <li><a href="{% url 'timeline' %}">História da Moda</a></li>
                     <li><a href="{% url 'estilos' %}">Principais Estilos</a></li>
                 </ul>
+
                 <ul>
                     <h4>Consultoria</h4>
+<<<<<<< HEAD
+                    <li><a href="#">Atendimento Presencial</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOvhroYqxFsSmitzLZaKwZlj6-AmntnAlevLTAm3KkBKVZOA/viewform?usp=publish-editor">Formulário</a></li>
+=======
                     <li><a href="{% url 'atendimento' %}">Atendimento Presencial</a></li>
                     <li><a href='https://docs.google.com/forms/d/e/1FAIpQLSdOvhroYqxFsSmitzLZaKwZlj6-AmntnAlevLTAm3KkBKVZOA/viewform?usp=publish-editor'>Formulário</a></li>
+>>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2
                     <li><a href="{% url 'comentarios' %}">Comentários</a></li>
                 </ul>
             </div>
         </div>
+
         <div id="footer-final">
             &copy; ClosetLab 2025: Todos os direitos reservados
         </div>
     </footer>
+
 </body>
 </html>
-
