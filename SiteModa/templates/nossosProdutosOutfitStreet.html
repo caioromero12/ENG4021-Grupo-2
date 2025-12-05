@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Street Style - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/nossosProdutosOutfitStreet.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-street">
+    <section class="hero-section">
+        <h1 class="hero-title">Street Style</h1>
+        <p class="hero-subtitle">Atitude, conforto e estilo urbano em primeiro lugar.</p>
+        <img src="{% static 'img/street/street-hero.jpg' %}" alt="Street Style" class="hero-image">
+    </section>
+    
+    <section class="description-section">
+        <h2 class="section-title">O que é o Street Style?</h2>
+        <p class="description-text">
+            O Street Style é mais do que uma tendência de moda - é um movimento cultural que nasceu nas ruas 
+            e se tornou uma forma poderosa de expressão individual. Inspirado na cultura hip-hop, skate, 
+            grafite e música urbana, este estilo combina elementos esportivos com peças casuais para criar 
+            looks cheios de personalidade. Caracteriza-se por silhuetas oversized, tênis statement, 
+            jaquetas técnicas, hoodies e muito preto, branco e cores neutras, com toques de cores vibrantes. 
+            O Street Style valoriza a autenticidade, a quebra de regras e a criatividade, permitindo que 
+            cada pessoa crie sua própria identidade visual através de combinações únicas e pessoais.
+        </p>
+    </section>
+    
+    <section class="products-section">
+        <h2 class="section-title">Nossas Peças Street</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="{% static 'img/street/hoodie-oversized.jpg' %}" alt="Hoodie Oversized" class="product-image">
+                <div class="product-name">Hoodie Oversized</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/street/jaqueta-jeans.jpg' %}" alt="Jaqueta Jeans" class="product-image">
+                <div class="product-name">Jaqueta Jeans</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/street/tenis-skate.jpg' %}" alt="Tênis Skate" class="product-image">
+                <div class="product-name">Tênis Skate</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/street/calca-cargo.jpg' %}" alt="Calça Cargo" class="product-image">
+                <div class="product-name">Calça Cargo</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/street/tshirt-estampada.jpg' %}" alt="T-shirt Estampada" class="product-image">
+                <div class="product-name">T-shirt Estampada</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/street/bone-baseball.jpg' %}" alt="Boné Baseball" class="product-image">
+                <div class="product-name">Boné Baseball</div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

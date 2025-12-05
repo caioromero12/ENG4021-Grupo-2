@@ -17,10 +17,15 @@ urlpatterns = [
     path('consultoria/', views.consultoria, name='consultoria'),
     path('atendimento/', views.atendimento, name='atendimento'),
     path('formulario/', views.formulario, name='formulario'),
+<<<<<<< HEAD
     path('country/', views.country, name='country'),
 
     # NOVA PÁGINA: NOVIDADES
     path('novidades/', views.novidades, name='novidades'),
+=======
+    path('parceiros/', views.parceiros, name='parceiros'), 
+    path('atendimento/', views.atendimento, name='atendimento'),
+>>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2
 
     # Autenticação
     path('login/', views.login_custom, name='login'),
@@ -33,4 +38,8 @@ urlpatterns = [
     # Busca com filtro
     path('buscar/', views.busca_usuario, name='busca_usuario'),
     path('resultado-busca/', views.resultado_busca, name='resultado_busca'),
+
+    # PÁGINAS DE PRODUTOS
+    path('nossos-produtos-boho/', views.nossosProdutosBoho, name='nossosProdutosBoho'),
+    path('nossos-produtos-street/', views.nossosProdutosOutfitStreet, name='nossosProdutosOutfitStreet'),
 ]

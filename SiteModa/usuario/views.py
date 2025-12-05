@@ -1,16 +1,40 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+import logging
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
 from django.utils.decorators import method_decorator
 from .models import Perfil
 
+logger = logging.getLogger(__name__)
+
+@csrf_exempt
 def login_custom(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        # Permitir autenticação usando email ou username: se o usuário
+        # enviar um email, buscar o username correspondente.
+        username_to_auth = username
+        if '@' in username:
+            try:
+                user_obj = User.objects.filter(email__iexact=username).first()
+                if user_obj:
+                    username_to_auth = user_obj.username
+            except Exception:
+                # qualquer erro aqui deixamos username como veio
+                username_to_auth = username
+
+        # Log de depuração (NÃO logar a senha)
+        logger.info(f"Login attempt: form_username={username}, username_to_auth={username_to_auth}")
+        try:
+            user = authenticate(request, username=username_to_auth, password=password)
+            logger.info(f"Authentication result for {username_to_auth}: {'SUCCESS' if user is not None else 'FAIL'}")
+        except Exception as e:
+            logger.exception('Error during authenticate')
+            user = None
 
         if user is not None:
             login(request, user)
@@ -113,6 +137,7 @@ def formulario(request):
     return render(request, 'formulario.html')
 
 @login_required(login_url='login')
+<<<<<<< HEAD
 def novidades(request):
     return render(request, 'novidades.html')
 
@@ -120,3 +145,16 @@ def novidades(request):
 def country(request):
     return render(request, 'country.html')
     
+=======
+def nossosProdutosBoho(request):
+    return render(request, 'nossosProdutosBoho.html')
+
+@login_required(login_url='login')
+def nossosProdutosOutfitStreet(request):
+    return render(request, 'nossosProdutosOutfitStreet.html')
+
+
+def parceiros(request):
+    """View para página Como se Tornar Afiliado"""
+    return render(request, 'parceiros.html')
+>>>>>>> 259aeb55a8378a70a0ffb8a8467b67eea36f99a2

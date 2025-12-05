@@ -22,12 +22,16 @@
     <div class="grid-produtos">
         <div class="item">
             <img src="{% static 'img/bohoNossoProdutos.jpg' %}" alt="Imagem de roupas Boho">
-            <h3>Conjunto Boho</h3>
+            <h3><a href="{% url 'nossosProdutosBoho' %}">Conjunto Boho</a>
+
+
+            </h3>
+
             <p>Visual leve, romântico e cheio de personalidade.</p>
         </div>
         <div class="item">
             <img src="{% static 'img/streetNossosProdutos.jpg' %}" alt="Imagem de roupas Street">
-            <h3>Outfit Street</h3>
+            <h3><a href="{% url 'nossosProdutosOutfitStreet' %}">Outfit Street</h3></a>
             <p>Desafie padrões e celebre a individualidade com esse estilo único.</p>
         </div>
         <div class="item">

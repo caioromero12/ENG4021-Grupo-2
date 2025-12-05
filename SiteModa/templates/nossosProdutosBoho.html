@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Conjunto Boho - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/nossosProdutosBoho.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-boho">
+    <section class="hero-section">
+        <h1 class="hero-title">Conjunto Boho</h1>
+        <p class="hero-subtitle">Visual leve, romântico e cheio de personalidade.</p>
+        <img src="{% static 'img/boho/boho-hero.jpg' %}" alt="Conjunto Boho" class="hero-image">
+    </section>
+    
+    <section class="description-section">
+        <h2 class="section-title">O que é o Estilo Boho?</h2>
+        <p class="description-text">
+            O estilo Boho, abreviação de "Bohemian", é uma expressão de moda que celebra a liberdade, a criatividade e a conexão com a natureza. 
+            Inspirado no movimento hippie dos anos 60 e 70, o Boho Chic combina elementos étnicos, vintage e artesanais para criar looks únicos 
+            e cheios de personalidade. Caracteriza-se por silhuetas fluidas, tecidos naturais como algodão, linho e renda, estampas florais, 
+            tribais e geométricas, além de uma paleta de cores terrosas e vibrantes. Acessórios artesanais, franjas e bordados são elementos 
+            fundamentais que completam o visual, transmitindo uma aura despreocupada, romântica e autêntica. Mais do que uma tendência, o Boho 
+            é um estilo de vida que valoriza a individualidade e a expressão pessoal acima de tudo.
+        </p>
+    </section>
+    
+    <section class="products-section">
+        <h2 class="section-title">Nossas Peças Boho</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="{% static 'img/boho/vestido-boho.jpg' %}" alt="Vestido Boho" class="product-image">
+                <div class="product-name">Vestido Boho</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/boho/blusa-renda.jpg' %}" alt="Blusa de Renda" class="product-image">
+                <div class="product-name">Blusa de Renda</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/boho/saia-floral.jpg' %}" alt="Saia Longa Floral" class="product-image">
+                <div class="product-name">Saia Longa Floral</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/boho/jaqueta-franjas.jpg' %}" alt="Jaqueta de Franjas" class="product-image">
+                <div class="product-name">Jaqueta de Franjas</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/boho/calca-wide-leg.jpg' %}" alt="Calça Wide Leg" class="product-image">
+                <div class="product-name">Calça Wide Leg</div>
+            </div>
+            
+            <div class="product-card">
+                <img src="{% static 'img/boho/top-croche.jpg' %}" alt="Top Crochê" class="product-image">
+                <div class="product-name">Top Crochê</div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
