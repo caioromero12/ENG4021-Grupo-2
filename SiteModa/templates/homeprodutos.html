@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/homeprodutos.css' %}">
+
+{% block title %}Loja — Produtos | ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/homeprodutos.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header>
+  <div class="topbar">
+    <h1>ClosetLab — Loja</h1>
+    <p>Explore nossa seleção de produtos — roupas, calçados e acessórios prontos para comprar.</p>
+  </div>
+
+  <div class="search-bar" role="search" aria-label="Busca de produtos">
+    <label for="busca" class="sr-only">Buscar produtos</label>
+    <input id="busca" type="search" placeholder="Buscar por produto, coleção ou palavra-chave" />
+
+    <label for="categoria">Categoria</label>
+    <select id="categoria" name="categoria">
+      <option value="">Todas</option>
+      <option value="feminino">Feminino</option>
+      <option value="masculino">Masculino</option>
+      <option value="acessorios">Acessórios</option>
+      <option value="calçados">Calçados</option>
+      <option value="bolsas">Bolsas</option>
+    </select>
+
+    <label for="ordenar">Ordenar</label>
+    <select id="ordenar" name="ordenar">
+      <option value="relevancia">Mais relevantes</option>
+      <option value="mais-recentes">Mais recentes</option>
+      <option value="preco-asc">Preço: menor → maior</option>
+      <option value="preco-desc">Preço: maior → menor</option>
+    </select>
+  </div>
+</header>
+
+<main>
+  <aside id="mini-cart" aria-live="polite">
+    <h2>Carrinho</h2>
+    <p id="mini-cart-empty">Seu carrinho está vazio.</p>
+    <!-- Estrutura que o JS pode popular -->
+    <ul id="mini-cart-items" hidden></ul>
+    <p id="mini-cart-total" hidden>Total: R$ <span>0,00</span></p>
+    <a href="/checkout" id="ir-para-checkout" hidden>Ir para checkout</a>
+  </aside>
+
+  <section id="produtos" aria-labelledby="titulo-produtos">
+    <h2 id="titulo-produtos">Produtos Disponíveis</h2>
+    <p>Escolha entre diversas peças e acessórios — tamanhos, cores e quantidades na página do produto ou no modal.</p>
+
+    <div class="grid-produtos" role="list">
+      <article class="product-card" role="listitem" data-product-id="p001" aria-labelledby="p001-name" data-price="129.90">
+        <img src="{% static 'img/products/camiseta-basica.jpg' %}" alt="Camiseta Básica Algodão" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p001-name">Camiseta Básica Algodão</h3>
+          <p class="product-price">R$ <span>129,90</span></p>
+          <p class="product-short">Conforto diário — corte unissex. Disponível em P, M, G.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p001">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p001" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p001">
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <input type="hidden" name="tamanho" value="M">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" role="listitem" data-product-id="p002" aria-labelledby="p002-name" data-price="379.00">
+        <img src="{% static 'img/products/bota-country.jpg' %}" alt="Bota Country em Couro" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p002-name">Bota Country em Couro</h3>
+          <p class="product-price">R$ <span>379,00</span></p>
+          <p class="product-short">Estilo autêntico — sola resistente, ideal para looks country e urbanos.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p002">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p002" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p002">
+              <select name="tamanho" aria-label="Tamanho">
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40" selected>40</option>
+                <option value="41">41</option>
+              </select>
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" role="listitem" data-product-id="p003" aria-labelledby="p003-name" data-price="259.50">
+        <img src="{% static 'img/products/jaqueta-jeans.jpg' %}" alt="Jaqueta Jeans Vintage" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p003-name">Jaqueta Jeans Vintage</h3>
+          <p class="product-price">R$ <span>259,50</span></p>
+          <p class="product-short">Corte oversized, lavagem clássica — combinável com vestidos e calças.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p003">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p003" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p003">
+              <select name="cor" aria-label="Cor">
+                <option value="denim-claro">Denim Claro</option>
+                <option value="denim-escuro">Denim Escuro</option>
+              </select>
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" role="listitem" data-product-id="p004" aria-labelledby="p004-name" data-price="89.90">
+        <img src="{% static 'img/products/bone-trucker.jpg' %}" alt="Boné Trucker" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p004-name">Boné Trucker</h3>
+          <p class="product-price">R$ <span>89,90</span></p>
+          <p class="product-short">Ajuste fácil, visual street — opções de patch personalizado.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p004">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p004" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p004">
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" role="listitem" data-product-id="p005" aria-labelledby="p005-name" data-price="199.00">
+        <img src="{% static 'img/products/saia-floral.jpg' %}" alt="Saia Midi Floral" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p005-name">Saia Midi Floral</h3>
+          <p class="product-price">R$ <span>199,00</span></p>
+          <p class="product-short">Tecido leve, estampa exclusiva — ideal para looks românticos.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p005">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p005" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p005">
+              <select name="tamanho" aria-label="Tamanho">
+                <option value="P">P</option>
+                <option value="M" selected>M</option>
+                <option value="G">G</option>
+              </select>
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card" role="listitem" data-product-id="p006" aria-labelledby="p006-name" data-price="149.90">
+        <img src="{% static 'img/products/mochila-urbana.jpg' %}" alt="Mochila Urbana" class="product-thumb" />
+        <div class="product-info">
+          <h3 id="p006-name">Mochila Urbana</h3>
+          <p class="product-price">R$ <span>149,90</span></p>
+          <p class="product-short">Compartimento para laptop, bolsos organizadores e design minimal.</p>
+          <div class="product-actions">
+            <button type="button" class="btn-details" data-open-product="p006">Ver detalhes</button>
+            <form class="add-to-cart" data-product-id="p006" method="post" action="/carrinho/adicionar">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="p006">
+              <input type="number" name="quantidade" value="1" min="1" aria-label="Quantidade">
+              <button type="submit" class="btn-add">Adicionar ao carrinho</button>
+            </form>
+          </div>
+        </div>
+      </article>
+
+    </div> 
+
+    <nav class="pagination" aria-label="Paginação de produtos">
+      <button aria-label="Página anterior" class="page-prev" disabled>« Anterior</button>
+      <button class="page-number" aria-current="true">1</button>
+      <button class="page-number">2</button>
+      <button class="page-number">3</button>
+      <button aria-label="Próxima página" class="page-next">Próxima »</button>
+    </nav>
+
+  </section>
+</main>
+
+<div id="product-modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title" hidden>
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fechar">×</button>
+    <h3 id="modal-title">Nome do Produto</h3>
+    <img src="" alt="" id="modal-image" />
+    <p class="modal-price">R$ <span>0,00</span></p>
+    <p id="modal-desc">Descrição completa do produto, materiais, instruções de cuidado e informações de frete.</p>
+
+    <form class="modal-add-to-cart" method="post" action="/carrinho/adicionar">
+      {% csrf_token %}
+      <input type="hidden" name="product_id" value="">
+      <label for="modal-tamanho">Tamanho</label>
+      <select id="modal-tamanho" name="tamanho"></select>
+
+      <label for="modal-quant">Quantidade</label>
+      <input id="modal-quant" name="quantidade" type="number" value="1" min="1">
+
+      <button type="submit">Adicionar ao carrinho</button>
+      <button type="button" class="buy-now">Comprar agora</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p>Precisa de ajuda? Ligue ou envie WhatsApp para <a href="tel:+5521998114203">21 99811-4203</a></p>
+  <p>&copy; <span id="ano-footer"></span> ClosetLab — Todos os direitos reservados</p>
+</footer>
+
+<script>
+  document.getElementById('ano-footer').textContent = new Date().getFullYear();
+</script>
+
+{% endblock %}

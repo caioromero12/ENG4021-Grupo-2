@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/modaretro.css' %}">
+{% block title %}Moda Retrô - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/modaRetro.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container-retro">
+    
+    <!-- Seção Hero -->
+    <section class="hero-section">
+        <h1 class="hero-title">Moda Retrô</h1>
+        <p class="hero-subtitle">Elegância clássica, nostalgia e personalidade atemporal.</p>
+        <img src="{% static 'img/retro/retro-hero.jpg' %}" alt="Moda Retrô" class="hero-image">
+    </section>
+
+    <!-- Introdução ao Estilo -->
+    <section class="description-section">
+        <h2 class="section-title">O Encanto do Retrô</h2>
+        <p class="description-text">
+            A Moda Retrô traz à tona a essência das décadas passadas — da sofisticação dos anos 20,
+            passando pelo glamour dos anos 50, até o estilo icônico e geométrico dos anos 80.  
+            Muito mais que roupas, o retrô é uma viagem estética repleta de história, memória cultural
+            e autenticidade. Uma linguagem visual que resgata cortes marcantes, preto e branco,
+            estampas vintage, alfaiataria refinada e aquele toque romântico que nunca sai de moda.  
+            Vestir-se retrô é viver a nostalgia de eras que marcaram gerações.
+        </p>
+    </section>
+
+    <!-- Storytelling visual -->
+    <section class="story-section">
+        <h2 class="section-title">Uma Linha do Tempo em Estilo</h2>
+
+        <div class="timeline-block">
+            <img src="{% static 'img/retro/anos20.jpg' %}" alt="Anos 20" class="story-image">
+            <p class="story-text"><strong>Anos 20:</strong> franjas, pérolas e cortes ousados simbolizam a liberdade feminina que surgia.</p>
+        </div>
+
+        <div class="timeline-block">
+            <img src="{% static 'img/retro/anos50.jpg' %}" alt="Anos 50" class="story-image">
+            <p class="story-text"><strong>Anos 50:</strong> cinturas marcadas, vestidos rodados e o glamour hollywoodiano.</p>
+        </div>
+
+        <div class="timeline-block">
+            <img src="{% static 'img/retro/anos80.jpg' %}" alt="Anos 80" class="story-image">
+            <p class="story-text"><strong>Anos 80:</strong> oversized, contrastes, estampas gráficas e ousadia urbana.</p>
+        </div>
+    </section>
+
+    <!-- Coleção -->
+    <section class="products-section">
+        <h2 class="section-title">Coleção Retrô Exclusiva</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/vestido-classico.jpg' %}" alt="Vestido Clássico Retrô" class="product-image">
+                <div class="product-name">Vestido Clássico</div>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/blazer-vintage.jpg' %}" alt="Blazer Vintage" class="product-image">
+                <div class="product-name">Blazer Vintage</div>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/saia-midi.jpg' %}" alt="Saia Midi Retrô" class="product-image">
+                <div class="product-name">Saia Midi</div>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/oculos-cat.jpg' %}" alt="Óculos Retrô" class="product-image">
+                <div class="product-name">Óculos Cat Eye</div>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/cardigan-xadrez.jpg' %}" alt="Cardigan Vintage" class="product-image">
+                <div class="product-name">Cardigan Xadrez</div>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'img/retro/acessorio-pearl.jpg' %}" alt="Acessórios Pérola" class="product-image">
+                <div class="product-name">Colar Pérolas</div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+{% endblock %}
