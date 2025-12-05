@@ -111,3 +111,12 @@ def atendimento(request):
 @login_required(login_url='login')
 def formulario(request):
     return render(request, 'formulario.html')
+
+@login_required(login_url='login')
+def novidades(request):
+    return render(request, 'novidades.html')
+
+@login_required(login_url='login')
+def country(request):
+    return render(request, 'country.html')
+    

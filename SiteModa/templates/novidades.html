@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/novidades.css' %}">
+
+{% block content %}
+
+<div class="novidades-container">
+    
+    <h1>Novidades em Breve</h1>
+    <p>Vem aí o futuro da moda universitária! Fique ligado 👀</p>
+
+    <!-- 1 -->
+    <div class="novidade-card">
+        <h2>Nova Linha Street College</h2>
+        <p>Um mix de conforto, estilo esportivo e personalidade. Perfeito para andar no campus e ainda marcar presença.</p>
+        <img src="{% static 'img/streetstyle.jpg' %}" alt="Novo estilo Street College">
+        <p class="novidade-data">Lançamento previsto: <strong>Março de 2026</strong></p>
+    </div>
+
+    <!-- 2 -->
+    <div class="novidade-card">
+        <h2>Mochilas Inteligentes</h2>
+        <p>USB integrado, RFID, compartimentos secretos e visual minimalista. Pensada para estudantes que vivem conectados.</p>
+        <img src="{% static 'img/mochila-smart.jpg' %}" alt="Mochila inteligente">
+        <p class="novidade-data">Lançamento previsto: <strong>Abril de 2026</strong></p>
+    </div>
+
+</div>
+
+{% endblock %}

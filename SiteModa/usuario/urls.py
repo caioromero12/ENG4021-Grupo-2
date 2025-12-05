@@ -17,6 +17,10 @@ urlpatterns = [
     path('consultoria/', views.consultoria, name='consultoria'),
     path('atendimento/', views.atendimento, name='atendimento'),
     path('formulario/', views.formulario, name='formulario'),
+    path('country/', views.country, name='country'),
+
+    # NOVA PÁGINA: NOVIDADES
+    path('novidades/', views.novidades, name='novidades'),
 
     # Autenticação
     path('login/', views.login_custom, name='login'),
