@@ -1,0 +1,445 @@
+/* Estilos específicos para a página de parceiros */
+
+/* Hero Section */
+.hero-parceiros {
+    padding: 4rem 5%;
+    background: linear-gradient(rgba(122, 91, 71, 0.9), rgba(122, 91, 71, 0.8));
+    color: white;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-top: 1rem;
+}
+
+.hero-parceiros h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: var(--bege-claro);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.95;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 2.5rem 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--caramelo);
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Seção Vantagens */
+.vantagens {
+    padding: 4rem 5%;
+    background-color: var(--bege-claro);
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--marrom);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--caramelo);
+    margin: 10px auto 0;
+}
+
+.vantagens-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vantagem-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(179, 122, 76, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vantagem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(122, 91, 71, 0.1);
+}
+
+.vantagem-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--bege-claro);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: var(--marrom);
+    font-size: 1.8rem;
+    border: 2px solid var(--caramelo);
+}
+
+.vantagem-card h3 {
+    color: var(--marrom);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.vantagem-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Seção Tipos de Lojas */
+.tipos-lojas {
+    padding: 4rem 5%;
+    background-color: white;
+}
+
+.tipos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.tipo-card {
+    background: var(--bege-claro);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(179, 122, 76, 0.2);
+}
+
+.tipo-card i {
+    font-size: 2.5rem;
+    color: var(--marrom);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tipo-card h3 {
+    color: var(--marrom);
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.tipo-card ul {
+    list-style: none;
+    text-align: left;
+    padding-left: 1.5rem;
+}
+
+.tipo-card li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.tipo-card li:before {
+    content: "•";
+    color: var(--caramelo);
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+}
+
+/* Seção Processo */
+.processo {
+    padding: 4rem 5%;
+    background-color: var(--bege-claro);
+}
+
+.processo-steps {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.processo-steps:before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--caramelo);
+    opacity: 0.3;
+}
+
+.processo-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.step-number {
+    min-width: 60px;
+    height: 60px;
+    background-color: var(--marrom);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    z-index: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.step-content {
+    flex: 1;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.step-content h3 {
+    color: var(--marrom);
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.step-content p {
+    color: #666;
+}
+
+/* Seção Formulário */
+.formulario-parceiros {
+    padding: 4rem 5%;
+    background-color: white;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--bege-claro);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(122, 91, 71, 0.08);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--marrom);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(179, 122, 76, 0.3);
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--caramelo);
+    box-shadow: 0 0 0 2px rgba(179, 122, 76, 0.2);
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.checkbox-group input {
+    margin-top: 0.3rem;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: var(--marrom);
+}
+
+.btn-parceiro {
+    display: block;
+    width: 100%;
+    background-color: var(--marrom);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-parceiro:hover {
+    background-color: var(--caramelo);
+}
+
+.form-note {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Seção Depoimentos */
+.depoimentos {
+    padding: 4rem 5%;
+    background-color: var(--bege-claro);
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.depoimento-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.depoimento-card:before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--caramelo);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.depoimento-texto {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    color: #555;
+}
+
+.depoimento-autor {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(179, 122, 76, 0.2);
+}
+
+.autor-info strong {
+    display: block;
+    color: var(--marrom);
+}
+
+.autor-info span {
+    font-size: 0.9rem;
+    color: var(--caramelo);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-parceiros h1 {
+        font-size: 2rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .processo-steps:before {
+        left: 25px;
+    }
+    
+    .step-number {
+        min-width: 50px;
+        height: 50px;
+        margin-right: 1.5rem;
+    }
+    
+    .stats-container {
+        gap: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vantagens-grid,
+    .tipos-grid,
+    .depoimentos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-parceiros {
+        padding: 3rem 5%;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

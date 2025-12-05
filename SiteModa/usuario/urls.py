@@ -17,6 +17,8 @@ urlpatterns = [
     path('consultoria/', views.consultoria, name='consultoria'),
     path('atendimento/', views.atendimento, name='atendimento'),
     path('formulario/', views.formulario, name='formulario'),
+    path('parceiros/', views.parceiros, name='parceiros'), 
+    path('atendimento/', views.atendimento, name='atendimento'),
 
     # Autenticação
     path('login/', views.login_custom, name='login'),

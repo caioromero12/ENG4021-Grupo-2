@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Seja uma Loja Parceira - ClosetLab{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/parceiros.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-parceiros">
+    <h1>Seja uma Loja Parceira ClosetLab</h1>
+    <p class="hero-subtitle">Sua loja divulgada para nosso público que busca estilo, qualidade e autenticidade</p>
+    
+    <div class="stats-container">
+        <div class="stat-item">
+            <span class="stat-number">1.000+</span>
+            <span class="stat-label">Clientes mensais</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">85%</span>
+            <span class="stat-label">Taxa de conversão</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">R$ 500+</span>
+            <span class="stat-label">Ticket médio</span>
+        </div>
+    </div>
+    
+    <a href="#formulario" class="btn-destaque">Quero ser parceira</a>
+</section>
+
+<!-- Seção Vantagens -->
+<section class="vantagens">
+    <h2 class="section-title">Por que ser nossa parceira?</h2>
+    
+    <div class="vantagens-grid">
+        <div class="vantagem-card">
+            <div class="vantagem-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>Público Qualificado</h3>
+            <p>Clientes que já investem em consultoria de estilo e buscam peças específicas</p>
+        </div>
+        
+        <div class="vantagem-card">
+            <div class="vantagem-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Mais Vendas</h3>
+            <p>Indicações diretas de nossas consultoras para sua loja</p>
+        </div>
+        
+        <div class="vantagem-card">
+            <div class="vantagem-icon">
+                <i class="fas fa-bullhorn"></i>
+            </div>
+            <h3>Visibilidade</h3>
+            <p>Sua marca apresentada em nosso site, redes sociais e newsletters</p>
+        </div>
+        
+        <div class="vantagem-card">
+            <div class="vantagem-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Parceria Estratégica</h3>
+            <p>Alinhamento com nossa proposta de estilo e curadoria</p>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Tipos de Lojas -->
+<section class="tipos-lojas">
+    <h2 class="section-title">Procuramos lojas de:</h2>
+    
+    <div class="tipos-grid">
+        <div class="tipo-card">
+            <i class="fas fa-tshirt"></i>
+            <h3>Moda Feminina</h3>
+            <ul>
+                <li>Roupas casuais</li>
+                <li>Peças de trabalho</li>
+                <li>Vestidos de ocasião</li>
+                <li>Moda praia</li>
+            </ul>
+        </div>
+        
+        <div class="tipo-card">
+            <i class="fas fa-shoe-prints"></i>
+            <h3>Calçados & Acessórios</h3>
+            <ul>
+                <li>Sapatos e tênis</li>
+                <li>Bolsas e carteiras</li>
+                <li>Joias e bijuterias</li>
+                <li>Óculos e relógios</li>
+            </ul>
+        </div>
+        
+        <div class="tipo-card">
+            <i class="fas fa-user-tie"></i>
+            <h3>Moda Masculina</h3>
+            <ul>
+                <li>Roupas sociais</li>
+                <li>Moda casual</li>
+                <li>Acessórios</li>
+                <li>Esportiva</li>
+            </ul>
+        </div>
+        
+        <div class="tipo-card">
+            <i class="fas fa-recycle"></i>
+            <h3>Sustentáveis</h3>
+            <ul>
+                <li>Marcas eco-friendly</li>
+                <li>Moda consciente</li>
+                <li>Peças atemporais</li>
+                <li>Upcycling</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Processo -->
+<section class="processo">
+    <h2 class="section-title">Como funciona a parceria?</h2>
+    
+    <div class="processo-steps">
+        <div class="processo-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Cadastro da Loja</h3>
+                <p>Você preenche o formulário com informações da sua loja e proposta</p>
+            </div>
+        </div>
+        
+        <div class="processo-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Análise e Curadoria</h3>
+                <p>Nossa equipe avalia o alinhamento com nossa proposta de estilo</p>
+            </div>
+        </div>
+        
+        <div class="processo-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Divulgação</h3>
+                <p>Sua loja é incluída em nosso diretório de lojas recomendadas</p>
+            </div>
+        </div>
+        
+        <div class="processo-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Indicações</h3>
+                <p>Nossas consultoras indicam sua loja para clientes com perfil compatível</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Formulário -->
+<section class="formulario-parceiros" id="formulario">
+    <h2 class="section-title">Cadastre sua Loja</h2>
+    
+    <div class="form-container">
+        <form class="partnership-form">
+            <div class="form-group">
+                <label for="store-name">Nome da Loja/Marca *</label>
+                <input type="text" id="store-name" placeholder="Ex: Moda Elegante Ltda" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="store-url">Site / Instagram *</label>
+                    <input type="text" id="store-url" placeholder="www.sualoja.com ou @sualoja" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="category">Categoria Principal *</label>
+                    <select id="category" required>
+                        <option value="">Selecione</option>
+                        <option value="feminina">Moda Feminina</option>
+                        <option value="masculina">Moda Masculina</option>
+                        <option value="calcados">Calçados</option>
+                        <option value="acessorios">Acessórios</option>
+                        <option value="sustentavel">Moda Sustentável</option>
+                        <option value="luxo">Moda de Luxo</option>
+                        <option value="outra">Outra</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Descreva sua loja (público, estilo, preços) *</label>
+                <textarea id="description" placeholder="Ex: Loja de moda feminina com peças para trabalho e ocasiões especiais, preços médios..." rows="3" required></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact-name">Nome do Responsável *</label>
+                    <input type="text" id="contact-name" placeholder="Seu nome completo" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email">E-mail *</label>
+                    <input type="email" id="contact-email" placeholder="contato@sualoja.com" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefone/WhatsApp *</label>
+                <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">
+                    Concordo que minhas informações sejam usadas para análise de parceria e autorizo o contato para mais detalhes
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-parceiro">Enviar Cadastro</button>
+            <p class="form-note">Entraremos em contato em até 3 dias úteis após análise.</p>
+        </form>
+    </div>
+</section>
+
+<!-- Seção Depoimentos -->
+<section class="depoimentos">
+    <h2 class="section-title">Lojas que já são parceiras</h2>
+    
+    <div class="depoimentos-grid">
+        <div class="depoimento-card">
+            <p class="depoimento-texto">"As indicações do ClosetLab trouxeram clientes que realmente compram. Aumentamos nossas vendas em 30% desde que nos tornamos parceiros."</p>
+            <div class="depoimento-autor">
+                <div class="autor-info">
+                    <strong>Ana Silva</strong>
+                    <span>Boutique Elegance</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="depoimento-card">
+            <p class="depoimento-texto">"O público é qualificado e sabe o que quer. As vendas são consistentes e o retorno é excelente. Parceria que vale muito a pena!"</p>
+            <div class="depoimento-autor">
+                <div class="autor-info">
+                    <strong>Carlos Mendes</strong>
+                    <span>Marca Sustentável EcoStyle</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="depoimento-card">
+            <p class="depoimento-texto">"A curadoria do ClosetLab garante que só trabalhamos com marcas alinhadas. Isso aumenta a confiança dos clientes e as vendas."</p>
+            <div class="depoimento-autor">
+                <div class="autor-info">
+                    <strong>Marina Oliveira</strong>
+                    <span>Consultora ClosetLab</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Link para Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+{% endblock %}
