@@ -26,6 +26,9 @@
             <div class="logo"><a href="{% url 'index' %}">ClosetLab</a></div>
             <ul class="nav-links">
                 <li><a href="{% url 'quemsomos' %}">Quem Somos</a></li>
+                <!-- NOVA ABA: Estilos (usa namespace 'styles') -->
+                <li><a href="{% url 'styles:busca' %}">Estilos</a></li>
+
                 <li><a href="{% url 'homeprodutos' %}">Nossos Produtos</a></li>
                 <li><a href="{% url 'moda_sociedade' %}">Moda e Sociedade</a></li>
                 <li><a href="{% url 'consultoria' %}">Consultoria</a></li>
@@ -84,9 +87,6 @@
 
                     <li><a href="{% url 'atendimento' %}">Atendimento Presencial</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdOvhroYqxFsSmitzLZaKwZlj6-AmntnAlevLTAm3KkBKVZOA/viewform?usp=publish-editor">Formulário</a></li>
-
-    
-
 
                     <li><a href="{% url 'comentarios' %}">Comentários</a></li>
                 </ul>

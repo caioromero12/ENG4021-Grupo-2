@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Resultados — ClosetLab{% endblock %}
+
+{% block content %}
+
+<section class="cabecalho">
+    <h1>Resultados da Busca</h1>
+    <p>Você pesquisou: <strong>{{ query }}</strong></p>
+
+    <a href="{% url 'styles:busca' %}" class="btn-secundario" style="margin-top:1rem;">Nova busca</a>
+</section>
+
+<section class="produtos">
+    <h2>Estilos Encontrados</h2>
+
+    {% if styles %}
+    <div class="grid-produtos" style="margin-top:1.2rem;">
+        {% for s in styles %}
+        <article class="card">
+           
+            <h3 style="font-family:'Playfair Display', serif;">{{ s.name }}</h3>
+            <p>{{ s.short_description }}</p>
+
+            <p style="font-size:0.9rem; color:#555;">
+                Países: {% if s.countries %}{{ s.countries|join:", " }}{% else %}—{% endif %}
+            </p>
+
+            <a class="btn-secundario" href="{% url 'styles:detail' s.slug %}" style="margin-top:0.6rem;">
+                Ver estilo completo
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+
+    {% else %}
+        <p style="margin-top:2rem;">Nenhum estilo encontrado. Tente novamente.</p>
+    {% endif %}
+</section>
+
+{% endblock %}

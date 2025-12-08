@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ style.name }} — ClosetLab{% endblock %}
+
+{% block content %}
+<section class="cabecalho">
+    <h1>{{ style.name }}</h1>
+    {% if style.short_description %}
+        <p>{{ style.short_description }}</p>
+    {% endif %}
+    <div style="margin-top:0.8rem;">
+        <strong>Países:</strong>
+        {% if style.countries %}
+            {{ style.countries|join:", " }}
+        {% else %}
+            —
+        {% endif %}
+    </div>
+
+    <div style="margin-top:0.6rem;">
+        <strong>Celebridades:</strong>
+        {% if style.celebrities %}
+            {% for c in style.celebrities %}
+                {% if c.name %}{{ c.name }}{% endif %}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        {% else %}
+            —
+        {% endif %}
+    </div>
+
+    {% if style.history %}
+    <div style="margin-top:1rem; max-width:900px; margin-left:auto; margin-right:auto;">
+        <h3 style="font-family: 'Playfair Display', serif; margin-bottom:0.4rem;">História</h3>
+        <p>{{ style.history }}</p>
+    </div>
+    {% endif %}
+</section>
+
+<section class="produtos">
+    <h2>Peças desse estilo</h2>
+
+    {% if style.products %}
+    <div class="grid-produtos" style="margin-top:1.2rem;">
+        {% for p in style.products %}
+        <div class="card">
+            <!-- imagem principal do produto (se houver) -->
+            {% if p.images and p.images.0 %}
+                <img src="{{ p.images.0 }}" alt="{{ p.name }}">
+            {% else %}
+                <img src="{% static 'img/placeholder.png' %}" alt="{{ p.name }}">
+            {% endif %}
+
+            <h3 style="font-family:'Playfair Display', serif; margin-top:0.6rem;">{{ p.name }}</h3>
+            {% if p.sku %}<p>SKU: {{ p.sku }}</p>{% endif %}
+            <p style="margin-top:0.4rem;">{{ p.description|default:"" }}</p>
+
+            <p style="margin-top:0.6rem;">
+                <strong>Disponibilidade:</strong>
+                {% if p.sizes %}
+                    {% for s in p.sizes %}
+                        {{ s.label }} ({{ s.stock|default:0 }} disponível){% if not forloop.last %} • {% endif %}
+                    {% endfor %}
+                {% else %}
+                    Sem tamanhos cadastrados
+                {% endif %}
+            </p>
+
+            <!-- Form/Compra (usamos JS para enviar JSON ao endpoint) -->
+            <form class="buy-form" data-product-id="{{ p.product_id }}">
+                <label for="size-{{ p.product_id }}">Tamanho</label><br>
+                <select id="size-{{ p.product_id }}" name="size" required style="margin-top:0.4rem; padding:0.4rem;">
+                    <option value="">Escolha</option>
+                    {% if p.sizes %}
+                        {% for s in p.sizes %}
+                            <option value="{{ s.label }}" data-price="{{ s.price }}" {% if s.stock|default:0 == 0 %}disabled{% endif %}>
+                                {{ s.label }} — R$ {{ s.price }}
+                            </option>
+                        {% endfor %}
+                    {% endif %}
+                </select>
+
+                <div style="margin-top:0.6rem;">
+                    <label>Quantidade</label><br>
+                    <input type="number" name="quantity" value="1" min="1" style="width:70px; padding:0.3rem;">
+                </div>
+
+                <div style="margin-top:0.8rem;">
+                    <button class="btn-destaque btn-buy" type="button">Comprar</button>
+                </div>
+            </form>
+
+            <div class="product-message" style="margin-top:0.6rem; color:var(--marrom);"></div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p>Nenhuma peça cadastrada para esse estilo ainda.</p>
+    {% endif %}
+</section>
+
+<script>
+    // helper CSRF cookie
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.card .btn-buy').forEach(btn => {
+            btn.addEventListener('click', async function (ev) {
+                const card = ev.target.closest('.card');
+                const form = card.querySelector('.buy-form');
+                const productId = form.dataset.productId;
+                const size = form.querySelector('select[name="size"]').value;
+                const quantity = parseInt(form.querySelector('input[name="quantity"]').value || 1, 10);
+                const msgEl = card.querySelector('.product-message');
+
+                if (!size) {
+                    msgEl.style.color = 'crimson';
+                    msgEl.textContent = 'Escolha um tamanho.';
+                    return;
+                }
+
+                // Pede nome/email (ou use request.user em produção)
+                const buyerName = prompt('Nome para o pedido:', '{{ request.user.username|default:"" }}') || 'Cliente';
+                const buyerEmail = prompt('Email para o pedido:', '') || '';
+
+                if (!buyerEmail) {
+                    msgEl.style.color = 'crimson';
+                    msgEl.textContent = 'Email é obrigatório para completar o pedido.';
+                    return;
+                }
+
+                const payload = {
+                    buyer: {name: buyerName, email: buyerEmail},
+                    items: [
+                        {product_id: productId, size: size, quantity: quantity}
+                    ],
+                    status: 'PENDING'
+                };
+
+                try {
+                    const res = await fetch("{% url 'styles:place_order' style.slug %}", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': csrftoken
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const data = await res.json();
+                    if (res.ok) {
+                        msgEl.style.color = 'green';
+                        msgEl.textContent = 'Pedido realizado! ID: ' + data.order_id + ' — Total: R$ ' + data.total;
+                    } else {
+                        msgEl.style.color = 'crimson';
+                        msgEl.textContent = data.error || 'Erro ao processar pedido.';
+                    }
+                } catch (err) {
+                    msgEl.style.color = 'crimson';
+                    msgEl.textContent = 'Erro: ' + err.message;
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}
