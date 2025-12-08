@@ -7,6 +7,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import View
 from django.utils.decorators import method_decorator
 from .models import Perfil
+from django.shortcuts import render, get_object_or_404
+from django.http import JsonResponse
+from .models import UnifiedFashionStyle
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -182,3 +186,54 @@ def homeprodutos(request):
 @login_required(login_url='login')
 def modaretro(request):
     return render(request, 'modaretro.html')
+
+def estilos_busca(request):
+    return render(request, "estilos_busca.html")
+
+
+def estilos_resposta(request):
+    q = request.GET.get("q", "").strip()
+
+    if q:
+        styles = UnifiedFashionStyle.objects.filter(name__icontains=q)
+    else:
+        styles = UnifiedFashionStyle.objects.all()
+
+    return render(request, "estilos_resposta.html", {
+        "styles": styles,
+        "query": q
+    })
+
+
+def style_detail(request, slug):
+    style = get_object_or_404(UnifiedFashionStyle, slug=slug)
+    return render(request, "styles/detail.html", {"style": style})
+
+
+def place_order(request, slug):
+    if request.method != "POST":
+        return JsonResponse({"error": "Método não permitido"}, status=405)
+
+    style = get_object_or_404(UnifiedFashionStyle, slug=slug)
+
+    try:
+        payload = json.loads(request.body.decode("utf-8"))
+    except:
+        return JsonResponse({"error": "JSON inválido"}, status=400)
+
+    buyer = payload.get("buyer")
+    items = payload.get("items")
+    status = payload.get("status", "PENDING")
+
+    if not buyer or not buyer.get("email"):
+        return JsonResponse({"error": "Email é obrigatório"}, status=400)
+
+    try:
+        order = style.place_order(buyer, items, status)
+    except ValueError as e:
+        return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({
+        "order_id": order["order_id"],
+        "total": order["total"]
+    })

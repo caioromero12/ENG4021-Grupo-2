@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Buscar Estilos — ClosetLab{% endblock %}
+
+{% block content %}
+<section class="cabecalho">
+    <h1>Buscar Estilos</h1>
+    <p>Descubra estilos, veja peças e compre direto da página.</p>
+
+    <form method="get" action="{% url 'styles:resposta' %}" style="margin-top:1rem;">
+        <input type="text" name="q" placeholder="Pesquisar (ex: boho, streetwear)" 
+               style="padding:0.6rem 0.8rem; width:60%; border-radius:6px; border:1px solid #ddd;">
+        <button class="btn-destaque" type="submit">Pesquisar</button>
+    </form>
+</section>
+{% endblock %}
