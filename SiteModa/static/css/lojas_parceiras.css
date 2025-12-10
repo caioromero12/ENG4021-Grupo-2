@@ -34,6 +34,7 @@
     margin-top: 40px;
 }
 
+/* CARTÕES DAS LOJAS */
 .loja-card {
     background: var(--branco);
     border-radius: 12px;
@@ -75,25 +76,38 @@
     opacity: 0.8;
 }
 
+/* FORÇA: botão com fundo branco sempre (sobrescreve regras conflitantes) */
 .loja-link {
     display: inline-block;
     padding: 12px 30px;
-    background: var(--marrom);
-    color: var(--branco);
-    text-decoration: none;
-    border-radius: 25px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid var(--marrom);
+    background: var(--branco) !important;    /* força fundo branco */
+    color: var(--marrom) !important;         /* força texto marrom */
+    text-decoration: none !important;
+    border-radius: 25px !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 600 !important;
+    transition: all 0.18s ease !important;
+    border: 2px solid var(--marrom) !important; /* forçar borda marrom */
+    box-shadow: none !important;
 }
 
-.loja-link:hover {
-    background: transparent;
-    color: var(--marrom);
-    transform: scale(1.05);
+/* Hover: mantém fundo branco, só destaca levemente a borda/sombra */
+.loja-link:hover,
+.loja-link:focus {
+    background: var(--branco) !important;   /* mantém branco no hover */
+    color: var(--marrom) !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(122,91,71,0.06) !important;
+    border-color: var(--caramelo) !important;
 }
 
+/* garante que links visitados fiquem consistentes */
+.loja-link:visited {
+    color: var(--marrom) !important;
+}
+
+/* VANTAGENS */
 .parceria-vantagens {
     background: var(--branco);
     padding: 60px 40px;
@@ -141,44 +155,35 @@
     opacity: 0.9;
 }
 
-/* Estados dos botões para combinar com o tema */
-.btn-login a {
-    color: var(--marrom);
-    text-decoration: none;
-}
-
-.btn-login:hover {
-    background: var(--bege-claro);
-}
-
+/* MOBILE */
 @media (max-width: 768px) {
     .lojas-header h1 {
         font-size: 2rem;
     }
-    
+
     .lojas-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .loja-card {
         padding: 20px;
     }
-    
+
     .loja-imagem {
         width: 100px;
         height: 100px;
     }
-    
+
     .parceria-vantagens {
         padding: 40px 20px;
         margin-top: 40px;
     }
-    
+
     .vantagens-grid {
         gap: 20px;
     }
-    
+
     .lojas-parceiras {
         padding: 40px 5%;
     }

@@ -11,6 +11,57 @@
 
     <!-- CSS principal do site -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <style>
+        a {
+            color: var(--marrom) !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+        }
+        a:hover {
+            color: var(--caramelo) !important;
+            text-decoration: underline !important;
+        }
+    </style>
+
+    <!-- COISA 2 — ajustes especiais para HEADER e FOOTER -->
+    <style>
+        /* ---------- HEADER ---------- */
+
+        /* Links do header SEMPRE brancos, sem sublinhado */
+        .navbar .nav-links a,
+        .navbar .logo a,
+        .navbar .btn-login a,
+        .navbar .btn-login {
+            color: var(--branco) !important;
+            text-decoration: none !important;
+        }
+
+        /* Botão de logout/login */
+        .navbar form .btn-login,
+        .navbar .btn-login {
+            background: var(--branco);
+            color: var(--marrom) !important;
+        }
+
+        /* REMOVER hover no header (não muda cor, não sublinha) */
+        .navbar .nav-links a:hover,
+        .navbar .logo a:hover,
+        .navbar .btn-login a:hover {
+            color: var(--branco) !important;
+            text-decoration: none !important;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer a {
+            color: var(--marrom) !important;
+            text-decoration: none !important;
+        }
+        footer a:hover {
+            color: var(--caramelo) !important;
+            text-decoration: underline !important;
+        }
+    </style>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
