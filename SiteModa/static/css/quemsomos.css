@@ -6,93 +6,125 @@
     --branco: #fff;
 }
 
+/* Estrutura geral */
+.container {
+    text-align: center;
+    padding: 2rem 5%;
+    color: var(--marrom);
+    font-family: 'Open Sans', sans-serif;
+}
+
 .container h1 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     margin-bottom: 30px;
     color: var(--marrom);
-    text-align: center;
-    font-weight: normal;
     letter-spacing: 1px;
+}
+
+.container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Imagens ilustrativas do corpo (armário / roupas)
+   Limitamos com max-width para evitar tamanhos enormes */
+#fotodoarmario,
+#fotoderoupas {
+    width: 100% !important;
+    max-width: 480px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 2rem auto !important;
+    border-radius: 8px !important;
+}
+
+/* Seção dos fundadores */
+.fundadores {
+    margin-top: 3.5rem;
 }
 
 .fundadores h2 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
     color: var(--marrom);
-    text-align: center;
+    margin-bottom: 2rem;
 }
 
+/* layout dos fundadores */
 .fundadores-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin: 2rem 0;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 3rem !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
 }
 
+/* card do fundador */
 .fundador {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
+    max-width: 250px !important;
+    text-align: center !important;
+    margin: 0 auto !important;
 }
 
-#fotocaio, #fotocadu, #fotosofia {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 70%;
-    margin-bottom: 1rem;
+/* ===== REGRAS FORTE PARA GARANTIR TAMANHO PEQUENO =====
+   Usamos !important para sobrepor qualquer regra anterior
+   (IDs, regras globais ou inline) */
+.fundador img,
+.fundador .foto-fundador,
+.foto-fundador {
+    width: 160px !important;
+    height: 160px !important;
+    max-width: 160px !important;
+    max-height: 160px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    border: 3px solid var(--caramelo) !important;
+    margin-bottom: 1rem !important;
+    display: block !important;
 }
 
+/* Texto do fundador */
 .fundador p {
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--marrom);
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    color: var(--marrom) !important;
 }
 
-.container {
-    text-align: center;
-    padding: 2rem 5%;
-}
-
-#fotodoarmario {
-    text-align: right;
-    width: 350px;
-    margin: 6rem;
-}
-
-#fotoderoupas {
-    text-align: left;
-    width: 350px;
-    margin: 3rem;
+/* Responsividade (ajustes para telas menores) */
+@media (max-width: 1024px) {
+    .fundador img,
+    .foto-fundador {
+        width: 150px !important;
+        height: 150px !important;
+        max-width: 150px !important;
+        max-height: 150px !important;
+    }
+    #fotodoarmario,
+    #fotoderoupas {
+        max-width: 420px !important;
+    }
 }
 
 @media (max-width: 768px) {
     .fundadores-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .fundador {
-        min-width: 100%;
-    }
-    
-    #fotocaio, #fotocadu, #fotosofia {
-        width: 150px;
-        height: 150px;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1.5rem !important;
     }
 
-    #fotodoarmario, #fotoderoupas {
-        width: 100%;
-        margin: 1rem 0;
+    .fundador img,
+    .foto-fundador {
+        width: 130px !important;
+        height: 130px !important;
+        max-width: 130px !important;
+        max-height: 130px !important;
+    }
+
+    #fotodoarmario,
+    #fotoderoupas {
+        max-width: 100% !important;
+        margin: 1rem auto !important;
     }
 }
-
