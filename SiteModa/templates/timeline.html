@@ -3,23 +3,183 @@
 
 {% block title %}Linha do Tempo da Moda - ClosetLab{% endblock %}
 
+{# tenta carregar o CSS externo (se o base.html suportar extra_css) #}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/timeline.css' %}">
 {% endblock %}
 
 {% block content %}
 
+{# --- Estilos inline de fallback (garante que mudanças apareçam mesmo se extra_css não for injetado no head) --- #}
+<style>
+:root{
+  --bege-claro:#fdf8f3; --marrom:#7a5b47; --caramelo:#b37a4c; --preto:#111; --branco:#fff;
+}
+
+/* Container do header da timeline */
+.timeline-header{
+  text-align:center;
+  padding:3.2rem 5%;
+}
+.timeline-header h1{
+  font-family: 'Playfair Display', serif;
+  font-size:2.4rem;
+  color:var(--marrom);
+  margin-bottom:0.6rem;
+}
+.timeline-header p{
+  font-size:1.05rem;
+  max-width:720px;
+  margin:0 auto;
+  color:var(--marrom);
+}
+
+/* Linha vertical / área da timeline */
+.timeline{
+  position:relative;
+  max-width:1100px;
+  margin:2rem auto 4rem;
+  padding:2.4rem 0;
+}
+
+/* linha central */
+.timeline::after{
+  content:"";
+  position:absolute;
+  width:4px;
+  background-color:var(--marrom);
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+/* item */
+.timeline-item{
+  position:relative;
+  width:50%;
+  box-sizing:border-box;
+  padding:1.6rem 1.2rem;
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+/* estrutura de imagem / conteúdo - controlada por flex */
+.timeline-item .image{
+  flex:0 0 44%;
+  max-width:44%;
+}
+.timeline-item .image img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:10px;
+  display:block;
+  box-shadow:0 4px 12px rgba(17,17,17,0.06);
+  background-color:#f7f3f0;
+}
+
+/* conteúdo */
+.timeline-item .content{
+  flex:1 1 56%;
+  max-width:56%;
+  background:var(--bege-claro);
+  border:1px solid #d9c8b8;
+  padding:1.6rem;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.07);
+  box-sizing:border-box;
+}
+
+/* tipografia */
+.timeline-item h2{
+  font-family:'Playfair Display', serif;
+  font-size:1.5rem;
+  color:var(--marrom);
+  margin:0 0 0.6rem 0;
+}
+.timeline-item p{
+  color:var(--marrom);
+  font-size:1rem;
+  line-height:1.6;
+  margin:0;
+}
+
+/* Lado esquerdo / direito — invertem a ordem visualmente */
+.timeline-item.left{
+  left:0;
+  flex-direction:row;       /* imagem à esquerda, conteúdo à direita */
+}
+.timeline-item.right{
+  left:50%;
+  flex-direction:row-reverse; /* imagem à direita, conteúdo à esquerda */
+}
+
+/* alinhamento do texto interno para combinar com o visual */
+.timeline-item.left .content{ text-align:right; }
+.timeline-item.right .content{ text-align:left; }
+
+/* marcador circular sobre a linha */
+.timeline-item::after{
+  content:"";
+  position:absolute;
+  top:32px;
+  width:16px;
+  height:16px;
+  background-color:var(--caramelo);
+  border:3px solid var(--branco);
+  border-radius:50%;
+  z-index:2;
+}
+.timeline-item.left::after{ right:-9px; left:auto; }
+.timeline-item.right::after{ left:-9px; right:auto; }
+
+/* responsivo: empilha em telas pequenas (imagem acima do texto) */
+@media (max-width: 768px){
+  .timeline{ padding:1.6rem 0; }
+  .timeline::after{ left:20px; }
+
+  .timeline-item{
+    width:100%;
+    display:block;
+    padding-left:60px;
+    padding-right:20px;
+    text-align:left !important;
+  }
+
+  .timeline-item .image,
+  .timeline-item .content{
+    max-width:100%;
+    flex:none;
+  }
+
+  .timeline-item .image{ margin-bottom:12px; }
+  .timeline-item .image img{ height:220px; width:100%; }
+
+  .timeline-item.left::after,
+  .timeline-item.right::after{
+    left:12px;
+    right:auto;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right{ left:0; }
+}
+</style>
+
+{# --- Conteúdo da página --- #}
 <section class="timeline-header">
     <h1>Evolução da Moda ao Longo das Décadas</h1>
     <p>Explore como a moda transformou comportamentos, estilos e formas de expressão ao longo da história.</p>
 </section>
 
-<section class="timeline">
+<section class="timeline" aria-label="Linha do tempo da moda">
 
     <!-- 1920 -->
     <div class="timeline-item left">
-        <div class="image">
-            <img src="{% static 'img/timeline/1920.jpg' %}" alt="Moda anos 1920">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/anos1920.png' %}" alt="Moda anos 1920">
         </div>
         <div class="content">
             <h2>Anos 1920</h2>
@@ -29,8 +189,8 @@
 
     <!-- 1950 -->
     <div class="timeline-item right">
-        <div class="image">
-            <img src="{% static 'img/timeline/1950.jpg' %}" alt="Moda anos 1950">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/anos1950.jpg' %}" alt="Moda anos 1950">
         </div>
         <div class="content">
             <h2>Anos 1950</h2>
@@ -40,8 +200,8 @@
 
     <!-- 1970 -->
     <div class="timeline-item left">
-        <div class="image">
-            <img src="{% static 'img/timeline/1970.jpg' %}" alt="Moda anos 1970">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/anos1970.jpg' %}" alt="Moda anos 1970">
         </div>
         <div class="content">
             <h2>Anos 1970</h2>
@@ -51,8 +211,8 @@
 
     <!-- 1990 -->
     <div class="timeline-item right">
-        <div class="image">
-            <img src="{% static 'img/timeline/1990.jpg' %}" alt="Moda anos 1990">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/anos1990.jpg' %}" alt="Moda anos 1990">
         </div>
         <div class="content">
             <h2>Anos 1990</h2>
@@ -62,8 +222,8 @@
 
     <!-- 2000 -->
     <div class="timeline-item left">
-        <div class="image">
-            <img src="{% static 'img/timeline/2000.jpg' %}" alt="Moda anos 2000">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/anos2000.jpeg' %}" alt="Moda anos 2000">
         </div>
         <div class="content">
             <h2>Anos 2000</h2>
@@ -73,8 +233,8 @@
 
     <!-- 2010–2020 -->
     <div class="timeline-item right">
-        <div class="image">
-            <img src="{% static 'img/timeline/2010.jpg' %}" alt="Moda anos 2010–2020">
+        <div class="image" aria-hidden="true">
+            <img src="{% static 'img/modaAtual.jpg' %}" alt="Moda anos 2010–2020">
         </div>
         <div class="content">
             <h2>2010–2020</h2>

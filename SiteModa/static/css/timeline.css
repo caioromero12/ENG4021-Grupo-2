@@ -1,131 +1,104 @@
-:root {
-    --bege-claro: #fdf8f3;
-    --marrom: #7a5b47;
-    --caramelo: #b37a4c;
-    --preto: #111;
-    --branco: #fff;
+/* ---- Debug / Forçar aplicação ---- */
+:root{
+  --bege-claro:#fdf8f3; --marrom:#7a5b47; --caramelo:#b37a4c; --preto:#111; --branco:#fff;
 }
 
-/* Layout geral */
-.timeline-header {
-    text-align: center;
-    padding: 4rem 5%;
+/* garantia: escopo alto - aplica só dentro do conteúdo principal */
+main .timeline, .content .timeline, .timeline {
+  position: relative !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 3rem 0 !important;
 }
 
-.timeline-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
-    color: var(--marrom);
-    margin-bottom: 1rem;
+/* linha central */
+main .timeline::after, .timeline::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 4px !important;
+  background-color: var(--marrom) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
-.timeline-header p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto;
-    color: var(--marrom);
+/* item: forçar display flex e largura 50% */
+main .timeline .timeline-item, .timeline .timeline-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  width: 50% !important;
+  box-sizing: border-box !important;
+  padding: 2rem !important;
 }
 
-/* Linha vertical */
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: auto;
-    padding: 3rem 0;
+/* imagem: tamanho fixo e object-fit */
+main .timeline .timeline-item .image,
+.timeline .timeline-item .image {
+  flex: 0 0 44% !important;
+  max-width: 44% !important;
+}
+main .timeline .timeline-item .image img,
+.timeline .timeline-item .image img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
 }
 
-.timeline::after {
-    content: "";
-    position: absolute;
-    width: 4px;
-    background-color: var(--marrom);
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+/* conteúdo: padrão */
+main .timeline .timeline-item .content,
+.timeline .timeline-item .content {
+  flex: 1 1 54% !important;
+  max-width: 54% !important;
+  background: var(--bege-claro) !important;
+  padding: 1.8rem !important;
+  border-radius: 12px !important;
 }
 
-/* Itens */
-.timeline-item {
-    padding: 2rem;
-    position: relative;
-    width: 50%;
-}
+/* forçar direções por classe */
+main .timeline .timeline-item.left { flex-direction: row !important; }
+main .timeline .timeline-item.right { flex-direction: row-reverse !important; }
 
-.timeline-item .content {
-    background: var(--bege-claro);
-    border: 1px solid #d9c8b8;
-    padding: 1.8rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px #00000011;
-}
+/* texto alinhamento */
+main .timeline .timeline-item.left .content { text-align: right !important; }
+main .timeline .timeline-item.right .content { text-align: left !important; }
 
-.timeline-item h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    color: var(--marrom);
-    margin-bottom: 0.8rem;
+/* marcador */
+main .timeline .timeline-item::after, .timeline .timeline-item::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 28px !important;
+  width: 16px !important;
+  height: 16px !important;
+  background-color: var(--caramelo) !important;
+  border: 3px solid var(--branco) !important;
+  border-radius: 50% !important;
+  z-index: 2 !important;
 }
+main .timeline .timeline-item.left::after { right: -9px !important; left: auto !important; }
+main .timeline .timeline-item.right::after { left: -9px !important; right: auto !important; }
 
-.timeline-item p {
-    color: var(--marrom);
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.timeline-item.left {
-    left: 0;
-    text-align: right;
-}
-
-.timeline-item.right {
-    left: 50%;
-}
-
-.timeline-item::after {
-    content: "";
-    position: absolute;
-    top: 28px;
-    width: 16px;
-    height: 16px;
-    background-color: var(--caramelo);
-    border: 3px solid var(--branco);
-    border-radius: 50%;
-    z-index: 1;
-}
-
-.timeline-item.left::after {
-    right: -9px;
-}
-
-.timeline-item.right::after {
-    left: -9px;
-}
-
-/* Responsividade */
+/* mobile - empilha */
 @media (max-width: 768px) {
-
-    .timeline::after {
-        left: 20px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 50px;
-        text-align: left !important;
-    }
-
-    .timeline-item.right {
-        left: 0;
-    }
-
-    .timeline-item.left {
-        left: 0;
-    }
-
-    .timeline-item.left::after,
-    .timeline-item.right::after {
-        left: 12px;
-    }
+  main .timeline::after, .timeline::after { left: 20px !important; }
+  main .timeline .timeline-item, .timeline .timeline-item {
+    width: 100% !important;
+    display: block !important;
+    padding-left: 60px !important;
+    text-align: left !important;
+  }
+  main .timeline .timeline-item .image,
+  .timeline .timeline-item .image {
+    max-width: 100% !important;
+    flex: none !important;
+    margin-bottom: 12px !important;
+  }
+  main .timeline .timeline-item .image img,
+  .timeline .timeline-item .image img {
+    height: 220px !important;
+  }
+  main .timeline .timeline-item::after,
+  .timeline .timeline-item::after { left: 12px !important; right: auto !important; }
 }
-
